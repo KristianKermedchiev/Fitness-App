@@ -1,0 +1,68 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: linear-gradient(rgba(53, 88, 80, 0), rgba(18, 30, 56, -1.6)), url("/assets/images/healthy-food-composition-with-alarm-clock.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.container header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.container header h1 {
+    font-size: 3rem;
+    color: #333;
+    text-shadow: 2px 2px 0px #ccc;
+}
+
+.container main {
+    text-align: center;
+}
+
+.container main p {
+    font-size: 1.15rem;
+    font-weight: bold;
+    line-height: 1.5;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.container form {
+    display: flex;
+    justify-content: center;
+}
+
+.container form button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 2px 2px 0px #ccc;
+    transition: background-color 0.3s;
+}
+
+.container form .login-button {
+    background-color: #4CAF50;
+    color: white;
+    text-shadow: 1px 1px 0px #333;
+}
+
+.container form .register-button {
+    background-color: #555;
+    color: white;
+}
+
+.container form .login-button:hover {
+    background-color: #3e8e41;
+}
+
+.container form .register-button:hover {
+    background-color: #333;
+}
