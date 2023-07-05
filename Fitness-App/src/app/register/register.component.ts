@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 
@@ -7,22 +8,24 @@ import { Router } from '@angular/router';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-
 export class RegisterComponent {
+  email!: string;
+  password!: string;
+  confirmPassword!: string;
+
+
   constructor(private authService: AuthService, private router: Router) { }
 
-  register(email: string, password: string, confirmPassword: string) {
-
+  register(form: NgForm) {
+    const { email, password, confirmPassword } = form.value;
     this.authService.register(email, password, confirmPassword)
-
       .then(() => {
         console.log('Registration successful!');
-        this.router.navigate(['/']);
+        this.router.navigate(['/']); // Redirect to home page
       })
-
       .catch((error) => {
-        // Handle registration error here!
         console.error('Registration error:', error);
+        // Handle registration error
       });
   }
 }

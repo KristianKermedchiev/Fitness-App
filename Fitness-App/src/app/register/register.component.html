@@ -1,17 +1,16 @@
 <div class="register-container">
-    <form class="form">
-        <h2 class="h2">Register</h2>
-        <label class="label" for="register-email">Email</label>
-        <input class="input" type="email" id="register-email" name="email" placeholder="Enter your email" #registerEmail/>
-        <label class="label" for="register-password">Password</label>
-        <input class="input" type="password" id="register-password" name="password" placeholder="Enter your password" #registerPassword/>
-        <label class="label" for="confirm-password">Confirm Password</label>
-        <input class="input" type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" #confirmPassword/>
-        <button class="button" type="submit" (click)="register(registerEmail.value, registerPassword.value, confirmPassword.value)">Register</button>
-        <div class="already-have-account">
-            <p>Already have an account? <a routerLink="/login">Login here</a></p>
-        </div>
+    <form class="form" #registerForm="ngForm" (ngSubmit)="register(registerForm)">
+      <h2 class="h2">Register</h2>
+      <label class="label" for="register-email">Email</label>
+      <input class="input" type="email" id="register-email" name="email" placeholder="Enter your email" [(ngModel)]="email" required>
+      <label class="label" for="register-password">Password</label>
+      <input class="input" type="password" id="register-password" name="password" placeholder="Enter your password" [(ngModel)]="password" required>
+      <label class="label" for="confirm-password">Confirm Password</label>
+      <input class="input" type="password" id="confirm-password" name="confirmPassword" placeholder="Confirm your password" [(ngModel)]="confirmPassword" required>
+      <button class="button" type="submit">Register</button>
+      <div class="already-have-account">
+        <p>Already have an account? <a routerLink="/login">Login here</a></p>
+      </div>
     </form>
-</div>
-
-
+  </div>
+  
