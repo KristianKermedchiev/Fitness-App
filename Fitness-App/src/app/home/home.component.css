@@ -66,3 +66,36 @@
 .container form .register-button:hover {
     background-color: #333;
 }
+
+/* Media Queries */
+@media screen and (max-width: 576px) {
+    .container header h1 {
+        font-size: 2rem;
+    }
+
+    .container main p {
+        font-size: 1rem;
+    }
+
+    .container form button {
+        padding: 8px 16px;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container form button {
+        margin: 10px 0;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .container header h1 {
+        font-size: 2.5rem;
+    }
+}
