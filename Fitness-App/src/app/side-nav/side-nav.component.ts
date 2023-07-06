@@ -2,10 +2,11 @@ import { Component, EventEmitter, HostListener, OnInit, Output } from '@angular/
 import { navbarData } from './nav-data';
 import {style, transition, trigger, animate, keyframes } from '@angular/animations';
 
-interface SideNavToggle{
+interface SideNavToggle {
   screenWidth: number;
   collapsed: boolean;
 }
+
 @Component({
   selector: 'app-side-nav',
   templateUrl: './side-nav.component.html',
@@ -37,9 +38,7 @@ interface SideNavToggle{
     ])
   ]
 })
-
-export class SideNavComponent implements OnInit{
-  
+export class SideNavComponent implements OnInit {
   @Output() onToggleSideNav: EventEmitter<SideNavToggle> = new EventEmitter();
   collapsed = false;
   screenWidth = 0;
@@ -48,26 +47,34 @@ export class SideNavComponent implements OnInit{
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     this.screenWidth = window.innerWidth;
-    if (this.screenWidth <= 768) {
-      this.collapsed = false;
+    if (this.screenWidth > 768) {
       this.emitToggleSideNav();
     } else {
+      this.collapsed = false;
       this.emitToggleSideNav();
     }
   }
 
   ngOnInit(): void {
     this.screenWidth = window.innerWidth;
+    if (this.screenWidth <= 768) {
+      this.collapsed = false;
+      this.emitToggleSideNav();
+    }
   }
 
   toggleCollapse(): void {
-    this.collapsed = !this.collapsed;
-    this.emitToggleSideNav();
+    if (this.screenWidth > 768) {
+      this.collapsed = !this.collapsed;
+      this.emitToggleSideNav();
+    }
   }
 
   closeSidenav(): void {
-    this.collapsed = false;
-    this.emitToggleSideNav();
+    if (this.screenWidth > 768) {
+      this.collapsed = false;
+      this.emitToggleSideNav();
+    }
   }
 
   private emitToggleSideNav(): void {
@@ -75,5 +82,3 @@ export class SideNavComponent implements OnInit{
     console.log('Emitting toggle side nav:', { collapsed: this.collapsed, screenWidth: this.screenWidth });
   }
 }
-
-
