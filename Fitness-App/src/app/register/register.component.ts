@@ -21,7 +21,7 @@ export class RegisterComponent {
     this.authService.register(email, password, confirmPassword)
       .then(() => {
         console.log('Registration successful!');
-        this.router.navigate(['/']); // Redirect to home page
+        this.router.navigate(['/login']); // Redirect to Login page.
       })
       .catch((error) => {
         console.error('Registration error:', error);
