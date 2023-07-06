@@ -1,20 +1,25 @@
-<header>
-    <!-- Header content goes here -->
-</header>
-
-<nav>
-    <app-side-nav (onToggleSideNav)="onToggleSideNav($event)"></app-side-nav>
-</nav>
-
-<app-body
-  [collapsed]="isSideNavCollapsed"
-  [screenWidth]="screenWidth">
-</app-body>
-
-<main>
+<ng-container *ngIf="shouldShowNav">
+    <header *ngIf="shouldShowHeader">
+      <!-- Header content goes here -->
+    </header>
+    <nav>
+      <app-side-nav (onToggleSideNav)="onToggleSideNav($event)"></app-side-nav>
+    </nav>
+  </ng-container>
+  
+  <app-body
+    [collapsed]="isSideNavCollapsed"
+    [screenWidth]="screenWidth"
+    *ngIf="shouldShowNav"
+  >
     <router-outlet></router-outlet>
-</main>
-
-<footer>
+  </app-body>
+  
+  <footer *ngIf="shouldShowFooter">
     <!-- Footer content goes here -->
-</footer>
+  </footer>
+  
+  <main *ngIf="!shouldShowNav">
+    <router-outlet></router-outlet>
+  </main>
+  
