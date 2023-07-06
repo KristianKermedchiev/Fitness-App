@@ -1,1 +1,19 @@
-<router-outlet></router-outlet>
+<header>
+    <!-- Header content goes here -->
+</header>
+
+<nav>
+    <app-side-nav (onToggleSideNav)="onToggleSideNav($event)"></app-side-nav>
+</nav>
+
+<app-body>
+    [collapsed]="isSideNavCollapsed"
+    [screenWidth]="screenWidth"
+</app-body>
+<main>
+    <router-outlet></router-outlet>
+</main>
+
+<footer>
+    <!-- Footer content goes here -->
+</footer>
