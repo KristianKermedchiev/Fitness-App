@@ -72,6 +72,7 @@ export class SideNavComponent implements OnInit{
 
   private emitToggleSideNav(): void {
     this.onToggleSideNav.emit({ collapsed: this.collapsed, screenWidth: this.screenWidth });
+    console.log('Emitting toggle side nav:', { collapsed: this.collapsed, screenWidth: this.screenWidth });
   }
 }
 

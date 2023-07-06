@@ -6,10 +6,11 @@
     <app-side-nav (onToggleSideNav)="onToggleSideNav($event)"></app-side-nav>
 </nav>
 
-<app-body>
-    [collapsed]="isSideNavCollapsed"
-    [screenWidth]="screenWidth"
+<app-body
+  [collapsed]="isSideNavCollapsed"
+  [screenWidth]="screenWidth">
 </app-body>
+
 <main>
     <router-outlet></router-outlet>
 </main>
