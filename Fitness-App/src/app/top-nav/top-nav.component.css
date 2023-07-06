@@ -20,10 +20,25 @@
   
   .top-nav-menu-item {
     margin-left: 1rem;
+  }
+  
+  .top-nav-menu-item span {
+    color: #fff;
+  }
+  
+  .top-nav-menu-item button.logout-button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
     cursor: pointer;
   }
   
-  .top-nav-menu-item:hover {
-    color: #000;
+  .top-nav-menu-item .profile-picture-circle {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: #fff;
+    cursor: pointer;
   }
+
   
