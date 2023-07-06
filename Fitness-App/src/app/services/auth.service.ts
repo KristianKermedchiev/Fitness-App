@@ -32,4 +32,8 @@ export class AuthService {
         throw new Error(error.message);
       });
   }
+
+  logout(): Promise<void> {
+    return this.afAuth.signOut();
+  }
 }
