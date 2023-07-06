@@ -17,6 +17,7 @@ import { RegisterComponent } from './register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { BodyComponent } from './body/body.component';
+import { TopNavComponent } from './top-nav/top-nav.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { BodyComponent } from './body/body.component';
     RegisterComponent,
     DashboardComponent,
     SideNavComponent,
-    BodyComponent
+    BodyComponent,
+    TopNavComponent
   ],
   imports: [
     BrowserModule,

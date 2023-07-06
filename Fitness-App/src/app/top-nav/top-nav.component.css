@@ -1,0 +1,29 @@
+.top-nav {
+    background: #263238;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    color: #fff;
+  }
+  
+  .top-nav-logo {
+    font-size: 24px;
+    font-weight: 700;
+  }
+  
+  .top-nav-menu {
+    display: flex;
+    align-items: center;
+  }
+  
+  .top-nav-menu-item {
+    margin-left: 1rem;
+    cursor: pointer;
+  }
+  
+  .top-nav-menu-item:hover {
+    color: #000;
+  }
+  

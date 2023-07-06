@@ -1,14 +1,15 @@
 .body {
     width: calc(100% - 5rem);
-    height: 100vh;
+    height: calc(100vh - 3rem); /* Subtract the height of the top-nav */
     margin-left: 5rem;
     z-index: 0;
     position: relative;
     top: 0;
-    transition: all .5s ease;
+    transition: all 0.5s ease;
     background: #f4f7fa;
     padding: 3rem;
-}
+    overflow-y: auto;
+  }
 
 .body-trimmed {
     width: calc(100% - 16.5625em);
@@ -19,3 +20,4 @@
     width: calc(100% - 5rem);
     margin-left: 5rem;
 }
+
