@@ -17,7 +17,7 @@ export class LoginComponent {
     try {
       const userCredential = await this.afAuth.signInWithEmailAndPassword(this.email, this.password);
       console.log('Logged in successfully!');
-      this.router.navigate(['/']); // Adjust the desired route
+      this.router.navigate(['/dashboard']); // Adjust the desired route
     } catch (error) {
       console.error('Error signing in:', error);
     }
