@@ -19,10 +19,11 @@ import { SideNavComponent } from './side-nav/side-nav.component';
 import { BodyComponent } from './body/body.component';
 import { TopNavComponent } from './top-nav/top-nav.component';
 import { TopWidgetsComponent } from './top-widgets/top-widgets.component';
-import { WeightByDayComponent } from './weight-by-day/weight-by-day.component';
 
 import { HighchartsChartModule } from 'highcharts-angular';
 import { StatisticsComponent } from './statistics/statistics.component';
+import { MidWidgetsComponent } from './mid-widgets/mid-widgets.component';
+import { BottomWidgetsComponent } from './bottom-widgets/bottom-widgets.component';
 
 @NgModule({
   declarations: [
@@ -35,8 +36,9 @@ import { StatisticsComponent } from './statistics/statistics.component';
     BodyComponent,
     TopNavComponent,
     TopWidgetsComponent,
-    WeightByDayComponent,
-    StatisticsComponent
+    StatisticsComponent,
+    MidWidgetsComponent,
+    BottomWidgetsComponent
   ],
   imports: [
     BrowserModule,
