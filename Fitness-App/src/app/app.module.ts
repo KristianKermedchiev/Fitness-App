@@ -22,6 +22,7 @@ import { TopWidgetsComponent } from './top-widgets/top-widgets.component';
 import { WeightByDayComponent } from './weight-by-day/weight-by-day.component';
 
 import { HighchartsChartModule } from 'highcharts-angular';
+import { StatisticsComponent } from './statistics/statistics.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { HighchartsChartModule } from 'highcharts-angular';
     BodyComponent,
     TopNavComponent,
     TopWidgetsComponent,
-    WeightByDayComponent
+    WeightByDayComponent,
+    StatisticsComponent
   ],
   imports: [
     BrowserModule,
