@@ -1,92 +1,80 @@
-.statistics-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-image: linear-gradient(rgba(53, 88, 80, 0), rgba(18, 30, 56, -1.6)), url("/assets/images/healthy-food-composition-with-alarm-clock.jpg");
-    background-size: cover;
-    background-position: center;
-  }
-  
-  .statistics-container .form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    width: 90%;
-    max-width: 400px;
-    height: 34rem;
-    padding: 1.5rem;
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    border-radius: 20px;
-    backdrop-filter: blur(8px);
-  }
-  
-  .statistics-container .label {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .statistics-container .input {
-    padding: 0.8rem;
-    margin-bottom: 1rem;
-    width: 100%;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  }
-  
-  .statistics-container .button {
-    padding: 0.5rem 1rem;
-    margin-top: 0rem;
-    border: none;
-    border-radius: 5px;
-    background-color: #3f51b5;
-    color: #fff;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .statistics-container .button:hover {
-    background-color: #1a237e;
-  }
-  
-  .statistics-container .h2 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-  }
-  
-  .statistics-container .register-link {
-    margin-top: 1rem;
-    color: black;
-    font-size: 1rem;
-    margin: 10px;
-    text-decoration: underline;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .statistics-container .register-link:hover {
-    color: #1a237e;
-  }
-  
-  /* Media Queries */
-  @media screen and (min-width: 576px) {
-    .statistics-container .form {
-      width: 70%;
-    }
-  }
-  
-  @media screen and (min-width: 768px) {
-    .statistics-container .form {
-      width: 50%;
-    }
-  }
-  
-  @media screen and (min-width: 992px) {
-    .statistics-container .form {
-      width: 40%;
-    }
-  }
-  
+.accordion {
+  width: 300px;
+}
+
+.accordion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f0f0f0;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.accordion-header:hover {
+  background-color: #e0e0e0;
+}
+
+.accordion-title {
+  font-weight: bold;
+}
+
+.accordion-icon {
+  font-size: 12px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.accordion-icon.expanded {
+  transform: rotate(180deg);
+}
+
+.accordion-content {
+  padding: 10px;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.accordion-content.expanded {
+  max-height: 500px; /* Adjust the max-height value as needed */
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+button {
+  padding: 5px 10px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #3f51b5;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #1a237e;
+}
