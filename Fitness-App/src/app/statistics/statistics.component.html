@@ -1,22 +1,48 @@
-<!-- <div class="form-container">
-    <h2>Update Weight and Goals</h2>
-    <form (submit)="submitForm()">
-        <div class="form-group">
-            <label for="weight">Weight</label>
-            <input type="number" id="weight" name="weight" [(ngModel)]="weight" required>
-        </div>
-        <div class="form-group">
-            <label for="dailyCalories">Daily Calories</label>
-            <input type="number" id="dailyCalories" name="dailyCalories" [(ngModel)]="dailyCalories" required>
-        </div>
-        <div class="form-group">
-            <label for="dailySteps">Daily Steps</label>
-            <input type="number" id="dailySteps" name="dailySteps" [(ngModel)]="dailySteps" required>
-        </div>
-        <div class="form-group">
-            <label for="weightGoal">Weight Goal</label>
-            <input type="number" id="weightGoal" name="weightGoal" [(ngModel)]="weightGoal" required>
-        </div>
-        <button type="submit">Update</button>
-    </form>
-</div> -->
+<form class="statistics-container" (submit)="submitForm()">
+    <div>
+        <label for="dailyCalories">Daily Calories:</label>
+        <input class="input" type="text" id="dailyCalories" name="dailyCalories" [(ngModel)]="dailyCalories" required>
+    </div>
+    <div>
+        <label for="dailySteps">Daily Steps:</label>
+        <input class="input" type="text" id="dailySteps" name="dailySteps" [(ngModel)]="dailySteps" required>
+    </div>
+    <div>
+        <label for="dailyWater">Daily Water Intake:</label>
+        <input class="input" type="text" id="dailyWater" name="dailyWater" [(ngModel)]="dailyWater" required>
+    </div>
+    <div>
+        <label for="currentWeight">Current Weight:</label>
+        <input class="input" type="text" id="currentWeight" name="currentWeight" [(ngModel)]="currentWeight" required>
+    </div>
+    <div>
+        <label for="lastWeek">Weight Last Week:</label>
+        <input class="input" type="text" id="lastWeek" name="lastWeek" [(ngModel)]="lastWeek" required>
+    </div>
+    <div>
+        <label for="goalWeight">Weight Goal:</label>
+        <input class="input" type="text" id="goalWeight" name="goalWeight" [(ngModel)]="goalWeight" required>
+    </div>
+    <div>
+        <label for="sleep">Sleep:</label>
+        <input class="input" type="text" id="sleep" name="sleep" [(ngModel)]="sleep" required>
+    </div>
+    <div>
+        <label for="workoutRoutine">Workout Routine:</label>
+        <input class="input" type="text" id="workoutRoutine" name="workoutRoutine" [(ngModel)]="workoutRoutine"
+            required>
+    </div>
+    <div>
+        <label for="protein">Proteins:</label>
+        <input class="input" type="text" id="proteins" name="proteins" [(ngModel)]="proteins" required>
+    </div>
+    <div>
+        <label for="carbs">Carbs:</label>
+        <input class="input" type="text" id="carbs" name="carbs" [(ngModel)]="carbs" required>
+    </div>
+    <div>
+        <label for="fats">Fats:</label>
+        <input class="input" type="text" id="fats" name="fats" [(ngModel)]="fats" required>
+    </div>
+    <button class="button" type="submit">Submit</button>
+</form>

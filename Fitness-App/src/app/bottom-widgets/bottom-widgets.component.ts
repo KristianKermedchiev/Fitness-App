@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { faBed, faDumbbell, faCubesStacked  } from '@fortawesome/free-solid-svg-icons';
+import { faBed, faDumbbell, faShoePrints  } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -11,6 +11,6 @@ export class BottomWidgetsComponent {
 
   faBed = faBed;
   faDumbbell  = faDumbbell ;
-  faCubesStacked = faCubesStacked;
+  faShoePrints = faShoePrints;
 
 }

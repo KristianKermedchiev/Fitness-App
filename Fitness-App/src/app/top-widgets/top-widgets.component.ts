@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { faUtensils, faShoePrints, faGlassWater  } from '@fortawesome/free-solid-svg-icons';
+import { faUtensils, faCubesStacked, faGlassWater  } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -10,6 +10,6 @@ import { faUtensils, faShoePrints, faGlassWater  } from '@fortawesome/free-solid
 export class TopWidgetsComponent {
 
   faUtensils = faUtensils;
-  faShoePrints  = faShoePrints ;
+  faCubesStacked  = faCubesStacked ;
   faGlassWater = faGlassWater;
 }
