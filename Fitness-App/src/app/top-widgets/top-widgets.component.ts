@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { faUtensils, faShoePrints, faGlassWater  } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-top-widgets',
@@ -7,4 +9,7 @@ import { Component } from '@angular/core';
 })
 export class TopWidgetsComponent {
 
+  faUtensils = faUtensils;
+  faShoePrints  = faShoePrints ;
+  faGlassWater = faGlassWater;
 }

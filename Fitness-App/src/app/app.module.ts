@@ -25,6 +25,8 @@ import { StatisticsComponent } from './statistics/statistics.component';
 import { MidWidgetsComponent } from './mid-widgets/mid-widgets.component';
 import { BottomWidgetsComponent } from './bottom-widgets/bottom-widgets.component';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,6 +51,7 @@ import { BottomWidgetsComponent } from './bottom-widgets/bottom-widgets.componen
     AngularFireAuthModule,
     AngularFirestoreModule,
     HighchartsChartModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
