@@ -18,6 +18,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { BodyComponent } from './body/body.component';
 import { TopNavComponent } from './top-nav/top-nav.component';
+import { TopWidgetsComponent } from './top-widgets/top-widgets.component';
+import { WeightByDayComponent } from './weight-by-day/weight-by-day.component';
+
+import { HighchartsChartModule } from 'highcharts-angular';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,9 @@ import { TopNavComponent } from './top-nav/top-nav.component';
     DashboardComponent,
     SideNavComponent,
     BodyComponent,
-    TopNavComponent
+    TopNavComponent,
+    TopWidgetsComponent,
+    WeightByDayComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +44,7 @@ import { TopNavComponent } from './top-nav/top-nav.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
+    HighchartsChartModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
