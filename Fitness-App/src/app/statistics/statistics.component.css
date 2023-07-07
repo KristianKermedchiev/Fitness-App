@@ -1,80 +1,71 @@
-.accordion {
-  width: 300px;
+.statistics {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
-.accordion-header {
+.update-form-box {
+  width: 30%;
+  margin: 10px;
+  padding: 1.5rem;
+  border: 2px solid black;
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+  box-sizing: border-box;
+}
+
+.image-update-h2 {
+  text-align: center;
+  padding: 30px 0;
+  color: black;
+  font-size: xx-large;
+}
+
+.update-input-group {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  background-color: #f0f0f0;
-  padding: 10px;
-  cursor: pointer;
 }
 
-.accordion-header:hover {
-  background-color: #e0e0e0;
-}
-
-.accordion-title {
-  font-weight: bold;
-}
-
-.accordion-icon {
-  font-size: 12px;
-  transition: transform 0.2s ease-in-out;
-}
-
-.accordion-icon.expanded {
-  transform: rotate(180deg);
-}
-
-.accordion-content {
-  padding: 10px;
-  overflow: hidden;
-  max-height: 0;
-  transition: max-height 0.3s ease-in-out;
-}
-
-.accordion-content.expanded {
-  max-height: 500px; /* Adjust the max-height value as needed */
-}
-
-.form-group {
-  margin-bottom: 10px;
-}
-
-label {
-  display: block;
-  font-weight: bold;
-}
-
-input[type="text"],
-input[type="email"],
-textarea {
+.update-input-field {
   width: 100%;
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.form-buttons {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 10px;
-}
-
-button {
-  padding: 5px 10px;
-  margin-left: 10px;
+  padding: 10px 0;
+  margin: 5px 0;
   border: none;
-  border-radius: 5px;
-  background-color: #3f51b5;
-  color: #fff;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
+  border-bottom: 1px solid #999;
+  outline: none;
+  background: transparent;
+  color: black;
 }
 
-button:hover {
+.update-submit-btn {
+  width: 100%;
+  padding: 10px 30px;
+  cursor: pointer;
+  margin-top: 20px;
+  background-color: #4CAF50;
+  border: 0;
+  border-radius: 30px;
+  outline: none;
+  color: white;
+  font-size: 1rem;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.update-submit-btn:hover {
   background-color: #1a237e;
+}
+
+@media screen and (max-width: 768px) {
+  .update-form-box {
+    width: 45%;
+    max-width: 300px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .update-form-box {
+    width: 90%;
+  }
 }
