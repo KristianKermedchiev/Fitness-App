@@ -1,0 +1,66 @@
+.widget-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .widget {
+    width: 30%;
+    min-width: 300px;
+    height: 175px;
+    background-color: #fff;
+    color: #fff;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 5px 5px 5px #939393;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .widget.green {
+    background-color: rgb(4, 67, 66);
+  }
+  
+  .widget.yellow {
+    background-color: rgb(237, 158, 32);
+  }
+  
+  .widget.red {
+    background-color: rgb(126, 5, 5);
+  }
+  
+  .widget .icon {
+    width: 100px;
+    font-size: 60px;
+    text-align: center;
+  }
+  
+  .widget .value {
+    text-align: center;
+    width: 175px;
+  }
+  
+  .widget .value .top {
+    font-size: 30px;
+  }
+  
+  .widget .value .bottom {
+    font-size: 20px;
+    margin-top: 10px;
+  }
+  
+  @media only screen and (max-width: 1200px) {
+    .widget {
+      width: 45%;
+      min-width: 275px;
+    }
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .widget {
+      width: 100%;
+      min-width: 250px;
+    }
+  }
+  
