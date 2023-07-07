@@ -18,11 +18,16 @@ export class WeightByDayComponent {
         width: 768,
       },
       title: {
-        text: 'Weight by Day'
+        text: 'Weight by Week - 2023'
       },
       xAxis: {
         categories: [
-          '2023-01-01', '2023-01-02', '2023-01-03', '2023-01-04', '2023-01-05', '2023-01-06', '2023-01-07',
+          'Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6', 'Week 7', 'Week 8', 'Week 9', 'Week 10', 'Week 11', 'Week 12', 'Week 13', 'Week 14'
+
+          // 'Week 15', 'Week 16', 'Week 17', 'Week 18', 'Week 5', 'Week 6', 'Week 7',
+          // 'Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6', 'Week 7',
+          // 'Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6', 'Week 7',
+          // 'Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6', 'Week 7',
           // Add more categories for each day of the year
           // ...
         ]

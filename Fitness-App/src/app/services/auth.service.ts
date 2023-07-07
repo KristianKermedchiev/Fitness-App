@@ -18,17 +18,23 @@ export class AuthService {
     if (password !== confirmPassword) {
       return Promise.reject(new Error('Passwords do not match.'));
     }
-
+  
     return this.afAuth.createUserWithEmailAndPassword(email, password)
       .then((userCredential) => {
         // User registration successful
         const user = userCredential.user;
         if (user) {
           // Save additional user information to Firestore
-          return this.firestore.collection('users').doc(user.uid).set({
+          const userData = {
+            uid: user.uid,
             email: user.email,
-            // Add additional user fields if needed
-          });
+            weight: 0,
+            dailyCalories: 0,
+            dailySteps: 0,
+            weightGoal: 0
+          };
+  
+          return this.firestore.collection('users').doc(user.uid).set(userData);
         } else {
           throw new Error('User is null');
         }
