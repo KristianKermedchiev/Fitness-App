@@ -1,12 +1,18 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Observable } from 'rxjs';
+import { User } from '@firebase/auth-types';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  constructor(private afAuth: AngularFireAuth, private firestore: AngularFirestore) { }
+  currentUser: Observable<User | null>;
+
+  constructor(private afAuth: AngularFireAuth, private firestore: AngularFirestore) {
+    this.currentUser = this.afAuth.authState;
+  }
 
   register(email: string, password: string, confirmPassword: string): Promise<any> {
     if (password !== confirmPassword) {
@@ -35,5 +41,9 @@ export class AuthService {
 
   logout(): Promise<void> {
     return this.afAuth.signOut();
+  }
+
+  getCurrentUser(): Observable<User | null> {
+    return this.currentUser;
   }
 }
