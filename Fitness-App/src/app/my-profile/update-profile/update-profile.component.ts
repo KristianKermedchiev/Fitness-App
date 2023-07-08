@@ -65,6 +65,14 @@ export class UpdateProfileComponent {
 
     if (this.email !== '') {
       updateData['email'] = this.email;
+      user.updateEmail(this.email)
+        .then(() => {
+          console.log('Email address updated in authentication!');
+        })
+        .catch((error) => {
+          console.log('Error updating email address in authentication:', error);
+          // Handle the error or show an error message
+        });
     }
 
     if (this.profilePicture !== '') {
