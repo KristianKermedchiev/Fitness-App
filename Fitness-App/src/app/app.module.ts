@@ -31,6 +31,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { RecipesComponent } from './recipes/recipes.component';
+import { UpdateProfileComponent } from './my-profile/update-profile/update-profile.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { RecipesComponent } from './recipes/recipes.component';
     AboutUsComponent,
     ContactUsComponent,
     MyProfileComponent,
-    RecipesComponent
+    RecipesComponent,
+    UpdateProfileComponent
   ],
   imports: [
     BrowserModule,

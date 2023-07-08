@@ -22,8 +22,6 @@ export class DashboardComponent implements OnInit {
       if (this.currentUser) {
         this.userDataService.getUserData(this.currentUser.uid).subscribe((data) => {
           this.userData = data;
-          // Additional logic here based on the retrieved user data
-          this.cdr.detectChanges(); // Manually trigger change detection
         });
       }
     });

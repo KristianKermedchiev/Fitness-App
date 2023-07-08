@@ -1,1 +1,44 @@
-<p>my-profile works!</p>
+<div class="profile-container">
+    <div class="top">
+      <h2 class="profile-heading">User Information</h2>
+      <div class="profilePic">
+        <img src="{{userData?.profilePic}}" alt="Profile Picture">
+      </div>
+    </div>
+  
+    <div class="info-fields">
+      <div class="left">
+        <div class="info-field">
+          <span class="field-label">First Name:</span>
+          <span>{{userData?.firstName}}</span>
+        </div>
+        <div class="info-field">
+          <span class="field-label">Last Name:</span>
+          <span>{{userData?.lastName}}</span>
+        </div>
+        <div class="info-field">
+          <span class="field-label">Email:</span>
+          <span>{{userData?.email}}</span>
+        </div>
+      </div>
+      <div class="right">
+        <div class="info-field">
+          <span class="field-label">Height:</span>
+         <span>{{userData?.height}}</span>
+        </div>
+        <div class="info-field">
+          <span class="field-label">Age:</span>
+          <span>{{userData?.age}}</span>
+        </div>
+        <div class="info-field">
+          <span class="field-label">Gender:</span>
+          <span>{{userData?.gender}}</span>
+        </div>
+      </div>
+    </div>
+  
+    <div class="button">
+      <button type="submit" class="btn btn-primary">Update Info</button>
+    </div>
+  </div>
+  
