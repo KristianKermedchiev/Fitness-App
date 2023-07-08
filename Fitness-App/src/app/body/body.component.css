@@ -1,6 +1,6 @@
 .body {
     width: calc(100% - 5rem);
-    height: calc(100vh - 3rem); /* Subtract the height of the top-nav */
+    height: calc(100vh - 3rem);
     margin-left: 5rem;
     z-index: 0;
     position: relative;

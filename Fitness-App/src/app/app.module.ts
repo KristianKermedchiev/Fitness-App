@@ -27,6 +27,10 @@ import { BottomWidgetsComponent } from './bottom-widgets/bottom-widgets.componen
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CalorieCalculatorComponent } from './calorie-calculator/calorie-calculator.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { MyProfileComponent } from './my-profile/my-profile.component';
+import { RecipesComponent } from './recipes/recipes.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +46,11 @@ import { CalorieCalculatorComponent } from './calorie-calculator/calorie-calcula
     StatisticsComponent,
     MidWidgetsComponent,
     BottomWidgetsComponent,
-    CalorieCalculatorComponent
+    CalorieCalculatorComponent,
+    AboutUsComponent,
+    ContactUsComponent,
+    MyProfileComponent,
+    RecipesComponent
   ],
   imports: [
     BrowserModule,

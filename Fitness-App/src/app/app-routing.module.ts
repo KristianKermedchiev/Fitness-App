@@ -6,6 +6,10 @@ import { RegisterComponent } from './register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { CalorieCalculatorComponent } from './calorie-calculator/calorie-calculator.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { RecipesComponent } from './recipes/recipes.component';
+import { MyProfileComponent } from './my-profile/my-profile.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -14,9 +18,10 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent},
   { path: 'statistics', component: StatisticsComponent},
   { path: 'calculator', component: CalorieCalculatorComponent},
-  // { path: 'pages', component: PagesComponent},
-  // { path: 'media', component: MediaComponent},
-  // { path: 'settings', component: SettingsComponent},
+  { path: 'about', component: AboutUsComponent},
+  { path: 'contacts', component: ContactUsComponent},
+  { path: 'recipes', component: RecipesComponent},
+  { path: 'profile', component: MyProfileComponent},
 ];
 
 @NgModule({

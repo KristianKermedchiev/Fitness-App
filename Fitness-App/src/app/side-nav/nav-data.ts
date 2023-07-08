@@ -15,23 +15,23 @@ export const navbarData = [
         label: 'Calculator'
     },
     {
-        routeLink: 'coupens',
-        icon: 'fal fa-tags',
-        label: 'Coupens'
+        routeLink: 'recipes',
+        icon: 'fal fa-folder',
+        label: 'Recipes'
     },
     {
-        routeLink: 'pages',
-        icon: 'fal fa-file',
-        label: 'Pages'
+        routeLink: 'profile',
+        icon: 'fal fa-user',
+        label: 'Profile'
     },
     {
-        routeLink: 'media',
-        icon: 'fal fa-camera',
-        label: 'Media'
+        routeLink: 'contacts',
+        icon: 'fal fa-address-book',
+        label: 'Contact Us'
     },
     {
-        routeLink: 'settings',
-        icon: 'fal fa-cog',
-        label: 'Settings'
+        routeLink: 'about',
+        icon: 'fal fa-address-card',
+        label: 'About Us'
     }
 ]
