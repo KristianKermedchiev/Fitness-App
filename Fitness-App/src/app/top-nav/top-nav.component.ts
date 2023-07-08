@@ -10,6 +10,7 @@ import { User } from '@firebase/auth-types';
 })
 export class TopNavComponent implements OnInit {
   currentUser: User | null = null;
+  currentUserEmail: User | null = null;
 
   constructor(private authService: AuthService, private router: Router) { }
 
