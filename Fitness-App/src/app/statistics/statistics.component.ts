@@ -7,32 +7,34 @@ import { Component } from '@angular/core';
 })
 
 export class StatisticsComponent {
-  nutrient1: string;
-  nutrient2: string;
-  nutrient3: string;
-  nutrient4: string;
-  nutrient5: string;
-  nutrient6: string;
-  weight: string;
-  height: string;
-  age: string;
-  exercise1: string;
-  exercise2: string;
-  exercise3: string;
+  dailyCalories: string;
+  proteins: string;
+  carbs: string;
+  fats: string;
+  dailyWaterIntake: string;
+
+  currentWeight: string;
+  lastWeekWeight: string;
+  weightGoal: string;
+
+  sleep: string;
+  workoutRoutine: string;
+  steps: string;
 
   constructor() {
-    this.nutrient1 = '';
-    this.nutrient2 = '';
-    this.nutrient3 = '';
-    this.nutrient4 = '';
-    this.nutrient5 = '';
-    this.nutrient6 = '';
-    this.weight = '';
-    this.height = '';
-    this.age = '';
-    this.exercise1 = '';
-    this.exercise2 = '';
-    this.exercise3 = '';
+    this.dailyCalories = '';
+    this.proteins = '';
+    this.carbs = '';
+    this.fats = '';
+    this.dailyWaterIntake = '';
+
+    this.currentWeight = '';
+    this.lastWeekWeight = '';
+    this.weightGoal = '';
+
+    this.sleep = '';
+    this.workoutRoutine = '';
+    this.steps = '';
   }
 
   updateNutrition() {

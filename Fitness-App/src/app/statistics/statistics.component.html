@@ -1,34 +1,39 @@
 <div class="statistics">
-    <div class="update-form-box">
-      <h2 class="image-update-h2">Update Nutrition</h2>
-      <form id="nutritionForm" class="update-input-group" (submit)="updateNutrition()">
-        <input type="text" name="nutrient1" class="update-input-field" placeholder="Nutrient 1" [(ngModel)]="nutrient1" />
-        <input type="text" name="nutrient2" class="update-input-field" placeholder="Nutrient 2" [(ngModel)]="nutrient2" />
-        <input type="text" name="nutrient3" class="update-input-field" placeholder="Nutrient 3" [(ngModel)]="nutrient6" />
-        <input type="text" name="nutrient3" class="update-input-field" placeholder="Nutrient 3" [(ngModel)]="nutrient4" />
-        <input type="text" name="nutrient3" class="update-input-field" placeholder="Nutrient 3" [(ngModel)]="nutrient5" />
-        <button type="submit" class="update-submit-btn">Update</button>
-      </form>
-    </div>
-  
-    <div class="update-form-box">
-      <h2 class="image-update-h2">Update Weight</h2>
-      <form id="weightForm" class="update-input-group" (submit)="updateWeight()">
-        <input type="text" name="weight" class="update-input-field" placeholder="Weight" [(ngModel)]="weight" />
-        <input type="text" name="height" class="update-input-field" placeholder="Height" [(ngModel)]="height" />
-        <input type="text" name="age" class="update-input-field" placeholder="Age" [(ngModel)]="age" />
-        <button type="submit" class="update-submit-btn">Update</button>
-      </form>
-    </div>
-  
-    <div class="update-form-box">
-      <h2 class="image-update-h2">Update Routine</h2>
-      <form id="routineForm" class="update-input-group" (submit)="updateRoutine()">
-        <input type="text" name="exercise1" class="update-input-field" placeholder="Exercise 1" [(ngModel)]="exercise1" />
-        <input type="text" name="exercise2" class="update-input-field" placeholder="Exercise 2" [(ngModel)]="exercise2" />
-        <input type="text" name="exercise3" class="update-input-field" placeholder="Exercise 3" [(ngModel)]="exercise3" />
-        <button type="submit" class="update-submit-btn">Update</button>
-      </form>
-    </div>
+  <div class="update-form-box">
+    <h2 class="image-update-h2">Update Nutrition</h2>
+    <form id="nutritionForm" class="update-input-group" (submit)="updateNutrition()">
+      <input type="text" name="dailyCalories" class="update-input-field" placeholder="Daily Calories"
+        [(ngModel)]="dailyCalories" />
+      <input type="text" name="proteins" class="update-input-field" placeholder="Proteins" [(ngModel)]="proteins" />
+      <input type="text" name="carbs" class="update-input-field" placeholder="Carbs" [(ngModel)]="carbs" />
+      <input type="text" name="fats" class="update-input-field" placeholder="Fats" [(ngModel)]="fats" />
+      <input type="text" name="dailyWaterIntake" class="update-input-field" placeholder="Daily Water Intake"
+        [(ngModel)]="dailyWaterIntake" />
+      <button type="submit" class="update-submit-btn">Update</button>
+    </form>
   </div>
-  
+
+  <div class="update-form-box">
+    <h2 class="image-update-h2">Update Weight</h2>
+    <form id="weightForm" class="update-input-group" (submit)="updateWeight()">
+      <input type="text" name="currentWeight" class="update-input-field" placeholder="Current Weight"
+        [(ngModel)]="currentWeight" />
+      <input type="text" name="lastWeekWeight" class="update-input-field" placeholder="Weight Last Week"
+        [(ngModel)]="lastWeekWeight" />
+      <input type="text" name="weightGoal" class="update-input-field" placeholder="Goal Weight"
+        [(ngModel)]="weightGoal" />
+      <button type="submit" class="update-submit-btn">Update</button>
+    </form>
+  </div>
+
+  <div class="update-form-box">
+    <h2 class="image-update-h2">Update Routine</h2>
+    <form id="routineForm" class="update-input-group" (submit)="updateRoutine()">
+      <input type="text" name="sleep" class="update-input-field" placeholder="Sleep" [(ngModel)]="sleep" />
+      <input type="text" name="workoutRoutine" class="update-input-field" placeholder="Workout Routine"
+        [(ngModel)]="workoutRoutine" />
+      <input type="text" name="steps" class="update-input-field" placeholder="Daily Steps" [(ngModel)]="steps" />
+      <button type="submit" class="update-submit-btn">Update</button>
+    </form>
+  </div>
+</div>
