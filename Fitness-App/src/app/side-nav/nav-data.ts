@@ -10,9 +10,9 @@ export const navbarData = [
         label: 'Statistics'
     },
     {
-        routeLink: 'products',
-        icon: 'fal fa-box-open',
-        label: 'Products'
+        routeLink: 'calculator',
+        icon: 'fal fa-thin fa-calculator',
+        label: 'Calculator'
     },
     {
         routeLink: 'coupens',

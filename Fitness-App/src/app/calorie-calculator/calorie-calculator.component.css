@@ -1,0 +1,77 @@
+.calorie-calculator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .content-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 960px;
+  }
+  
+  .text-container {
+    width: 100%;
+    max-width: 480px;
+    padding-right: 20px;
+    margin-bottom: 20px; /* Added gap between text and form */
+  }
+  
+  .form-container {
+    width: 100%;
+    max-width: 480px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .btn-primary {
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    background-color: #4CAF50;
+    border: 0;
+    border-radius: 30px;
+    outline: none;
+    color: white;
+    font-size: 1rem;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .btn-primary:hover {
+    background-color: #1a237e;
+  }
+  
+  .instructions,
+  .exercise-descriptions,
+  .formula-explanation {
+    text-align: left;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .content-container {
+      max-width: 400px;
+    }
+  }
+  
+  @media screen and (max-width: 550px) {
+    .content-container {
+      max-width: 300px;
+    }
+  }
+  

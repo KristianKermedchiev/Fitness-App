@@ -26,6 +26,7 @@ import { MidWidgetsComponent } from './mid-widgets/mid-widgets.component';
 import { BottomWidgetsComponent } from './bottom-widgets/bottom-widgets.component';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CalorieCalculatorComponent } from './calorie-calculator/calorie-calculator.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     TopWidgetsComponent,
     StatisticsComponent,
     MidWidgetsComponent,
-    BottomWidgetsComponent
+    BottomWidgetsComponent,
+    CalorieCalculatorComponent
   ],
   imports: [
     BrowserModule,
