@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { faWeightScale, faScaleUnbalanced, faMedal  } from '@fortawesome/free-solid-svg-icons';
 
 
@@ -8,6 +8,7 @@ import { faWeightScale, faScaleUnbalanced, faMedal  } from '@fortawesome/free-so
   styleUrls: ['./mid-widgets.component.css']
 })
 export class MidWidgetsComponent {
+  @Input() userData: any;
 
   faWeightScale = faWeightScale;
   faScaleUnbalanced  = faScaleUnbalanced ;

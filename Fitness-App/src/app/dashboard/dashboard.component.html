@@ -1,11 +1,12 @@
 <div class="top-section">
-    <app-top-widgets></app-top-widgets>
-</div>
-
-<div class="mid-section">
-    <app-mid-widgets></app-mid-widgets>
-</div>
-
-<div class="bottom-section">
-    <app-bottom-widgets></app-bottom-widgets>
-</div>
+    <app-top-widgets [userData]="userData"></app-top-widgets>
+  </div>
+  
+  <div class="mid-section">
+    <app-mid-widgets [userData]="userData"></app-mid-widgets>
+  </div>
+  
+  <div class="bottom-section">
+    <app-bottom-widgets [userData]="userData"></app-bottom-widgets>
+  </div>
+  

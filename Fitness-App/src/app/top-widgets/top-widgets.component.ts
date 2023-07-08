@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
-import { faUtensils, faCubesStacked, faGlassWater  } from '@fortawesome/free-solid-svg-icons';
-
+import { Component, Input } from '@angular/core';
+import { faUtensils, faCubesStacked, faGlassWater } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-top-widgets',
@@ -8,8 +7,9 @@ import { faUtensils, faCubesStacked, faGlassWater  } from '@fortawesome/free-sol
   styleUrls: ['./top-widgets.component.css']
 })
 export class TopWidgetsComponent {
+  @Input() userData: any;
 
   faUtensils = faUtensils;
-  faCubesStacked  = faCubesStacked ;
+  faCubesStacked = faCubesStacked;
   faGlassWater = faGlassWater;
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { faBed, faDumbbell, faShoePrints  } from '@fortawesome/free-solid-svg-icons';
 
 
@@ -8,6 +8,7 @@ import { faBed, faDumbbell, faShoePrints  } from '@fortawesome/free-solid-svg-ic
   styleUrls: ['./bottom-widgets.component.css']
 })
 export class BottomWidgetsComponent {
+  @Input() userData: any;
 
   faBed = faBed;
   faDumbbell  = faDumbbell ;

@@ -1,29 +1,29 @@
 <div class="widget-container">
-    <div class="widget yellow">
-      <div class="icon">
-        <fa-icon [icon]="faBed"></fa-icon>
-      </div>
-      <div class="value">
-        <div class="top">Sleep</div>
-        <div class="bottom">Number</div>
-      </div>
+  <div class="widget yellow">
+    <div class="icon">
+      <fa-icon [icon]="faBed"></fa-icon>
     </div>
-    <div class="widget red">
-      <div class="icon">
-        <fa-icon [icon]="faDumbbell"></fa-icon>
-      </div>
-      <div class="value">
-        <div class="top">Workout Routine</div>
-        <div class="bottom">Number</div>
-      </div>
+    <div class="value">
+      <div class="top">Sleep</div>
+      <div class="bottom">{{ userData?.sleep }}</div>
     </div>
-    <div class="widget green">
-      <div class="icon">
-        <fa-icon [icon]="faShoePrints "></fa-icon>
-      </div>
-      <div class="value">
-        <div class="top">Daily Steps</div>
-        <div class="bottom">Number</div>
-      </div>
+  </div>
+  <div class="widget red">
+    <div class="icon">
+      <fa-icon [icon]="faDumbbell"></fa-icon>
     </div>
-    
+    <div class="value">
+      <div class="top">Workout Routine</div>
+      <div class="bottom">{{ userData?.workoutRoutine }}</div>
+    </div>
+  </div>
+  <div class="widget green">
+    <div class="icon">
+      <fa-icon [icon]="faShoePrints"></fa-icon>
+    </div>
+    <div class="value">
+      <div class="top">Daily Steps</div>
+      <div class="bottom">{{ userData?.dailySteps }}</div>
+    </div>
+  </div>
+</div>
