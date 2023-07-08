@@ -80,10 +80,14 @@
     background-color: #3f51b5;
   }
   
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 790px) {
     .info-fields {
       flex-direction: column;
       align-items: center;
+    }
+
+    .profile-container {
+      height: 900px;
     }
     
     .info-field {
