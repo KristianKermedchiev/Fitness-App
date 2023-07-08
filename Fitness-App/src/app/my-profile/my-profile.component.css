@@ -3,7 +3,7 @@
     border-radius: 20px;
     backdrop-filter: blur(8px);
     max-width: 1000px;
-    height: 40rem;
+    height: 600px;
     margin: 0 auto;
     padding: 10px;
     margin-top: 5rem;
@@ -11,11 +11,8 @@
   }
   
   .profile-heading {
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
     font-size: 3rem;
-    justify-content: center;
-    align-self: center;
-    margin-bottom: 3rem;
   }
   
   .right {
@@ -25,7 +22,7 @@
   .left {
     margin-left: 3rem;
   }
-
+  
   .profilePic {
     width: 200px;
     height: 200px;
@@ -42,9 +39,9 @@
   
   .info-fields {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    margin-bottom: 20px;
-    height: 35%;
+    margin-bottom: 2rem;
   }
   
   .info-field {
@@ -52,6 +49,7 @@
     align-items: center;
     margin-bottom: 1rem;
     font-size: 1.6rem;
+    flex-basis: calc(50% - 1.5rem);
   }
   
   .field-label {
@@ -62,6 +60,7 @@
   
   .button {
     text-align: center;
+    margin-top: 4rem;
   }
   
   .btn {
@@ -82,10 +81,24 @@
   }
   
   @media screen and (max-width: 768px) {
-    .user-info,
-    .update-form {
-      flex-basis: 100%;
-      max-width: 100%;
+    .info-fields {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .info-field {
+      flex-basis: auto;
+      flex-direction: column;
+      align-items: center;
+      width: 90%;
+      max-width: 300px;
+    }
+
+    .right {
+        margin: 0;
+    }
+    .left {
+        margin: 0;
     }
   }
   
