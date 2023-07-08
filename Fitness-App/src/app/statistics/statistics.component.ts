@@ -76,18 +76,62 @@ export class StatisticsComponent {
         // Handle the error
       });
   }
-  updateWeight() {
-    // Handle the submit event for updating weight
-    // Access the weight, height, age values using this.weight, this.height, this.age
-    // Perform necessary actions (e.g., API call, data manipulation, etc.)
-    // Clear the form fields if needed
+  async updateWeight() {
+    const user = await this.afAuth.currentUser;
+    
+    if (!user) {
+      // User is not logged in or UID is unavailable
+      return;
+    }
+
+    const userUid = user.uid;
+
+    const currentWeight = this.currentWeight;
+    const weightLastWeek = this.lastWeekWeight;
+    const weightGoal = this.weightGoal;
+
+    console.log('Update successful!');
+
+    this.firestore.collection('users').doc(userUid).update({ weightGoal: weightGoal, weightLastWeek: weightLastWeek, currentWeight: currentWeight  })
+      .then(() => {
+        // Clear the form fields
+        this.currentWeight = '';
+        this.lastWeekWeight = '';
+        this.weightGoal = '';
+        // Handle any additional logic or success messages
+      })
+      .catch((error) => {
+        // Handle the error
+      });
   }
 
-  updateRoutine() {
-    // Handle the submit event for updating routine
-    // Access the exercise values using this.exercise1, this.exercise2, this.exercise3
-    // Perform necessary actions (e.g., API call, data manipulation, etc.)
-    // Clear the form fields if needed
+  async updateRoutine() {
+    const user = await this.afAuth.currentUser;
+    
+    if (!user) {
+      // User is not logged in or UID is unavailable
+      return;
+    }
+
+    const userUid = user.uid;
+
+    const sleep = this.sleep;
+    const workoutRoutine = this.workoutRoutine;
+    const steps = this.steps;
+
+    console.log('Update successful!');
+
+    this.firestore.collection('users').doc(userUid).update({ sleep: sleep, workoutRoutine: workoutRoutine, dailySteps: steps  })
+    .then(() => {
+      // Clear the form fields
+      this.sleep = '';
+      this.workoutRoutine = '';
+      this.steps = '';
+      // Handle any additional logic or success messages
+    })
+    .catch((error) => {
+      // Handle the error
+    });
   }
 }
 
