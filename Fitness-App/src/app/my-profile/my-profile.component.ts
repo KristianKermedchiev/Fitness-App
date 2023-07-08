@@ -2,6 +2,7 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service'
 import { User } from '@firebase/auth-types';
 import { UserDataService } from '../services/user-data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-my-profile',
@@ -11,7 +12,7 @@ import { UserDataService } from '../services/user-data.service';
 export class MyProfileComponent implements OnInit {
   currentUser: User | null = null;
   userData: any;
-  constructor(private authService: AuthService, private userDataService: UserDataService, private cdr: ChangeDetectorRef) {
+  constructor(private authService: AuthService, private userDataService: UserDataService, private cdr: ChangeDetectorRef, private router: Router) {
     
   }
 
@@ -25,5 +26,9 @@ export class MyProfileComponent implements OnInit {
         });
       }
     });
+  }
+
+  redirectToUpdateProfile() {
+    this.router.navigate(['/updateProfile']);
   }
 }
