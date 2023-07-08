@@ -31,8 +31,8 @@
     overflow: hidden;
   }
   
-  .profilePic img {
-    width: 100%;
+  .profilePic img {    
+    width: 100%;  
     height: 100%;
     object-fit: cover;
   }

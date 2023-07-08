@@ -29,18 +29,17 @@ export class AuthService {
             email: user.email,
             dailyCalories: 0,
             dailySteps: 0,
-            dailyWater: 0,
-            currentWeight: 0,
+             currentWeight: 0,
             weightLastWeek: 0,
             weightGoal: 0,
             sleep: 0,
             workoutRoutine: '',
-            macroNutrients: {
-              protein: 0,
-              carbs: 0,
-              fats: 0
+            macroNutrients: {               
+              proteins: 0,                        
+              carbs: 0,                                                     
+              fats: 0  
             },
-            profilePicture: '',
+            profilePicture: '',                                                                                                                                                                                                                                                                                                                 
             gender: '',
             height: 0,
             age: 0,

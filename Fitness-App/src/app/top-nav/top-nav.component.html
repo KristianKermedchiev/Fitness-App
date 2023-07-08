@@ -8,7 +8,9 @@
             <button class="logout-button" (click)="logout()">Logout</button>
         </div>
         <div class="top-nav-menu-item">
-            <div class="profile-picture-circle"></div>
+            <button class="profile-picture-circle"> 
+                <img src="{{userData?.profilePicture}}" alt="Profile Picture">
+            </button>
         </div>
     </div>
 </div>
