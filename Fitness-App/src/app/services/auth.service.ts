@@ -40,10 +40,12 @@ export class AuthService {
               carbs: 0,
               fats: 0
             },
-            profilePic: '',
+            profilePicture: '',
             gender: '',
             height: 0,
             age: 0,
+            firstName: '',
+            lastName: ''
           };
 
           // Set user data in Firestore
