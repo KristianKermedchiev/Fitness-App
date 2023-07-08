@@ -17,8 +17,17 @@
 .text-container {
     width: 100%;
     max-width: 480px;
-    padding-right: 20px;
     margin-bottom: 20px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 3rem;
 }
 
 .form-container {
@@ -61,6 +70,8 @@
 .exercise-descriptions,
 .formula-explanation {
     text-align: left;
+    margin-bottom: 1.5rem;
+    font-size: 20px;
 }
 
 @media screen and (max-width: 768px) {
