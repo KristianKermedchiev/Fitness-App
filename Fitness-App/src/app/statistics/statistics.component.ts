@@ -42,7 +42,7 @@ export class StatisticsComponent {
 
   async updateNutrition() {
     const user = await this.afAuth.currentUser;
-    
+
     if (!user) {
       // User is not logged in or UID is unavailable
       return;
@@ -50,19 +50,34 @@ export class StatisticsComponent {
 
     const userUid = user.uid;
 
-    const nutritionData = {
-      proteins: this.proteins,
-      carbs: this.carbs,
-      fats: this.fats,
-    };
+    const updateData: { [key: string]: any } = {};
 
-    const dailyCalories = this.dailyCalories;
-    const dailyWaterIntake = this.dailyWaterIntake;
+    if (this.proteins !== '') {
+      updateData['macroNutrients.proteins'] = this.proteins;
+    }
 
-    console.log('Update successful!');
+    if (this.carbs !== '') {
+      updateData['macroNutrients.carbs'] = this.carbs;
+    }
 
-    this.firestore.collection('users').doc(userUid).update({ macroNutrients: nutritionData, dailyCalories: dailyCalories, dailyWaterIntake: dailyWaterIntake  })
+    if (this.fats !== '') {
+      updateData['macroNutrients.fats'] = this.fats;
+    }
+
+    if (this.dailyCalories !== '') {
+      updateData['dailyCalories'] = this.dailyCalories;
+    }
+
+    if (this.dailyWaterIntake !== '') {
+      updateData['dailyWaterIntake'] = this.dailyWaterIntake;
+    }
+
+    this.firestore
+      .collection('users')
+      .doc(userUid)
+      .update(updateData)
       .then(() => {
+        console.log('Update successful!');
         // Clear the form fields
         this.dailyCalories = '';
         this.proteins = '';
@@ -76,9 +91,10 @@ export class StatisticsComponent {
         // Handle the error
       });
   }
+
   async updateWeight() {
     const user = await this.afAuth.currentUser;
-    
+
     if (!user) {
       // User is not logged in or UID is unavailable
       return;
@@ -86,14 +102,27 @@ export class StatisticsComponent {
 
     const userUid = user.uid;
 
-    const currentWeight = this.currentWeight;
-    const weightLastWeek = this.lastWeekWeight;
-    const weightGoal = this.weightGoal;
+    const updateData: { [key: string]: any } = {};
 
-    console.log('Update successful!');
+    if (this.currentWeight !== '') {
+      updateData['currentWeight'] = this.currentWeight;
+    }
 
-    this.firestore.collection('users').doc(userUid).update({ weightGoal: weightGoal, weightLastWeek: weightLastWeek, currentWeight: currentWeight  })
+    if (this.lastWeekWeight !== '') {
+      updateData['weightLastWeek'] = this.lastWeekWeight;
+    }
+
+    if (this.weightGoal !== '') {
+      updateData['weightGoal'] = this.weightGoal;
+    }
+
+    this.firestore
+      .collection('users')
+      .doc(userUid)
+      .update(updateData)
       .then(() => {
+        console.log('Update successful!');
+
         // Clear the form fields
         this.currentWeight = '';
         this.lastWeekWeight = '';
@@ -107,32 +136,44 @@ export class StatisticsComponent {
 
   async updateRoutine() {
     const user = await this.afAuth.currentUser;
-    
+  
     if (!user) {
       // User is not logged in or UID is unavailable
       return;
     }
-
+  
     const userUid = user.uid;
-
-    const sleep = this.sleep;
-    const workoutRoutine = this.workoutRoutine;
-    const steps = this.steps;
-
-    console.log('Update successful!');
-
-    this.firestore.collection('users').doc(userUid).update({ sleep: sleep, workoutRoutine: workoutRoutine, dailySteps: steps  })
-    .then(() => {
-      // Clear the form fields
-      this.sleep = '';
-      this.workoutRoutine = '';
-      this.steps = '';
-      // Handle any additional logic or success messages
-    })
-    .catch((error) => {
-      // Handle the error
-    });
-  }
+    
+    const updateData: { [key: string]: any } = {};
+  
+    if (this.sleep !== '') {
+      updateData['sleep'] = this.sleep;
+    }
+  
+    if (this.workoutRoutine !== '') {
+      updateData['workoutRoutine'] = this.workoutRoutine;
+    }
+  
+    if (this.steps !== '') {
+      updateData['dailySteps'] = this.steps;
+    }
+  
+    this.firestore
+      .collection('users')
+      .doc(userUid)
+      .update(updateData)
+      .then(() => {
+        console.log('Update successful!');
+        // Clear the form fields
+        this.sleep = '';
+        this.workoutRoutine = '';
+        this.steps = '';
+        // Handle any additional logic or success messages
+      })
+      .catch((error) => {
+        // Handle the error
+      });
+  }  
 }
 
 
