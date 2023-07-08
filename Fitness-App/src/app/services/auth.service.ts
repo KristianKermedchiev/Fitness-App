@@ -3,6 +3,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
 import { User } from '@firebase/auth-types';
+import { UserDataService } from './user-data.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ import { User } from '@firebase/auth-types';
 export class AuthService {
   currentUser: Observable<User | null>;
 
-  constructor(private afAuth: AngularFireAuth, private firestore: AngularFirestore) {
+  constructor(private afAuth: AngularFireAuth, private firestore: AngularFirestore, private userDataService: UserDataService) {
     this.currentUser = this.afAuth.authState;
   }
 
@@ -38,9 +39,23 @@ export class AuthService {
               protein: 0,
               carbs: 0,
               fats: 0
-            }
+            },
+            profilePic: '',
+            gender: '',
+            height: 0,
+            age: 0,
           };
-          return this.firestore.collection('users').doc(user.uid).set(userData);
+
+          // Set user data in Firestore
+          return this.firestore.collection('users').doc(user.uid).set(userData)
+            .then(() => {
+              // Retrieve user data using the UserDataService
+              this.userDataService.getUserData(user.uid).subscribe((userData) => {
+                // Handle the retrieved user data
+                console.log(userData);
+                // You can store the user data in a local variable or use it as needed
+              });
+            });
         } else {
           throw new Error('User is null');
         }
