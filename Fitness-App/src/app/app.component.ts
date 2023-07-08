@@ -24,13 +24,9 @@ export class AppComponent {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         const url = event.urlAfterRedirects;
-        console.log('Current URL:', url);
         this.shouldShowNav = !['/', '/login', '/register'].includes(url);
         this.shouldShowHeader = !['/', '/login', '/register'].includes(url);
         this.shouldShowFooter = !['/', '/login', '/register'].includes(url);
-        console.log('shouldShowNav:', this.shouldShowNav);
-        console.log('shouldShowHeader:', this.shouldShowHeader);
-        console.log('shouldShowFooter:', this.shouldShowFooter);
       }
     });
   }
