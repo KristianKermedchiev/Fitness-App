@@ -21,7 +21,6 @@ export class RecipesComponent implements OnInit {
   }
 
   ngOnInit() {
-    // Fetch the recipes data on component initialization
     this.fetchRecipes();
   }
 
@@ -33,4 +32,9 @@ export class RecipesComponent implements OnInit {
   redirectToCreateRecipe() {
     this.router.navigate(['recipes/create']);
   }
+
+  redirectToRecipeDetails(recipeId: string) {
+    this.router.navigate(['recipes/details', recipeId]);
+  }
+  
 }

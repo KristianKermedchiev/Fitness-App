@@ -1,13 +1,12 @@
 <div class="menu">
     <div class="heading">
-      <h1>Recipes</h1>
-      <button (click)="redirectToCreateRecipe()"> Create a recipe</button>
+        <h1>Recipes</h1>
+        <button (click)="redirectToCreateRecipe()"> Create a recipe</button>
     </div>
     <div class="food-items" *ngFor="let recipe of recipes | async">
-      <div class="details-sub">
-        <h5>{{ recipe.name }}</h5>
-      </div>
-      <img [src]="recipe.picture" alt="">   
+        <div class="details-sub">
+            <h5>{{ recipe.name }}</h5>
+        </div>
+        <img [src]="recipe.picture" alt="" (click)="redirectToRecipeDetails(recipe.id)">
     </div>
-  </div>
-  
+</div>

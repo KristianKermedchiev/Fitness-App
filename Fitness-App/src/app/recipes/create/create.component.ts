@@ -18,13 +18,12 @@ export class CreateComponent {
   ) {}
 
   createRecipe() {
-  
-
     this.authService.getCurrentUser().subscribe((currentUser) => {
       if (currentUser) {
-        this.recipe.owner = currentUser.uid; 
-
-        this.recipeService.addRecipe(this.recipe)
+        const recipe = { ...this.recipe }; 
+        recipe.owner = currentUser.uid;
+        
+        this.recipeService.addRecipe(recipe)
           .then((docRef) => {
             console.log('Recipe document written with ID:', docRef.id);
             // Optionally, display a success message to the user or navigate to a success page
