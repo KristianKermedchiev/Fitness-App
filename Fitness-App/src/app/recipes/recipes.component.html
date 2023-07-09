@@ -1,70 +1,13 @@
 <div class="menu">
     <div class="heading">
-        <h1>Recipes</h1>
-        <button (click)="redirectToCreateRecipe()"> Create a recipe</button>
+      <h1>Recipes</h1>
+      <button (click)="redirectToCreateRecipe()"> Create a recipe</button>
     </div>
-    <div class="food-items">
-        <div class="details-sub">
-            <h5>Smoky Hamburger</h5>
-        </div>
-        <img src="/assets/images/healthy-food-composition-with-alarm-clock.jpg" alt="">   
+    <div class="food-items" *ngFor="let recipe of recipes | async">
+      <div class="details-sub">
+        <h5>{{ recipe.name }}</h5>
+      </div>
+      <img [src]="recipe.picture" alt="">   
     </div>
-    <div class="food-items">
-        <div class="details-sub">
-            <h5>Smoky Hamburger</h5>
-        </div>
-        <img src="/assets/images/healthy-food-composition-with-alarm-clock.jpg" alt="">
-        
-    </div>
-    <div class="food-items">
-        <div class="details-sub">
-            <h5>Smoky Hamburger</h5>
-        </div>
-        <img src="/assets/images/healthy-food-composition-with-alarm-clock.jpg" alt="">
-        
-    </div>
-    <div class="food-items">
-        <div class="details-sub">
-            <h5>Smoky Hamburger</h5>
-        </div>
-        <img src="/assets/images/healthy-food-composition-with-alarm-clock.jpg" alt="">
-        
-    </div>
-    <div class="food-items">
-        <div class="details-sub">
-            <h5>Smoky Hamburger</h5>
-        </div>
-        <img src="/assets/images/healthy-food-composition-with-alarm-clock.jpg" alt="">
-        
-    </div>
-    <div class="food-items">
-        <div class="details-sub">
-            <h5>Smoky Hamburger</h5>
-        </div>
-        <img src="/assets/images/healthy-food-composition-with-alarm-clock.jpg" alt="">
-        
-    </div>
-
-    <div class="food-items">
-        <div class="details-sub">
-            <h5>Smoky Hamburger</h5>
-        </div>
-        <img src="/assets/images/healthy-food-composition-with-alarm-clock.jpg" alt="">
-        
-    </div>
-    <div class="food-items">
-        <div class="details-sub">
-            <h5>Smoky Hamburger</h5>
-        </div>
-        <img src="/assets/images/healthy-food-composition-with-alarm-clock.jpg" alt="">
-        
-    </div>
-    <div class="food-items">
-        <div class="details-sub">
-            <h5>Smoky Hamburger</h5>
-        </div>
-        <img src="/assets/images/healthy-food-composition-with-alarm-clock.jpg" alt="">
-        
-    </div>
-    
-</div>
+  </div>
+  
