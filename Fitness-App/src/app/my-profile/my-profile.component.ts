@@ -29,6 +29,6 @@ export class MyProfileComponent implements OnInit {
   }
 
   redirectToUpdateProfile() {
-    this.router.navigate(['/updateProfile']);
+    this.router.navigate(['profile/updateProfile']);
   }
 }
