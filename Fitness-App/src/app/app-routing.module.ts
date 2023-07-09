@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, createComponent } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -11,6 +11,8 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { RecipesComponent } from './recipes/recipes.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { UpdateProfileComponent } from './my-profile/update-profile/update-profile.component';
+import { CreateComponent } from './recipes/create/create.component';
+import { DetailsComponent } from './recipes/details/details.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -24,6 +26,8 @@ const routes: Routes = [
   { path: 'recipes', component: RecipesComponent},
   { path: 'profile', component: MyProfileComponent},
   { path: 'profile/updateProfile', component: UpdateProfileComponent},
+  { path: 'recipes/create', component: CreateComponent},
+  { path: 'recipes/details', component: DetailsComponent},
 ];
 
 @NgModule({
