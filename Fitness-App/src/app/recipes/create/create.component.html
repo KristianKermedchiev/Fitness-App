@@ -1,1 +1,41 @@
-<p>create works!</p>
+<div class="profile-container">
+    <div class="update-form">
+        <h2>Create a recipe</h2>
+        <form>
+            <div class="form-field">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required placeholder="Name:">
+            </div>
+            <div class="form-field">
+                <label for="difficulty">Difficulty:</label>
+                <input type="text" id="difficulty" name="difficulty" required placeholder="Difficulty:">
+            </div>
+            <div class="form-field">
+                <label for="spicy">Spicy:</label>
+                <select id="spicy" name="spicy">
+                    <option value="spicy">Spicy</option>
+                    <option value="not-spicy">Not Spicy</option>
+                </select>
+            </div>
+            <div class="form-field">
+                <label for="vegan">Vegan:</label>
+                <select id="vegan" name="vegan">
+                    <option value="vegan">Vegan</option>
+                    <option value="not-vegan">Not Vegan</option>
+                </select>
+            </div>
+            <div class="form-field">
+                <label for="picture">Picture:</label>
+                <input type="text" id="picture" name="picture" required placeholder="URL:">
+            </div>
+            <div class="form-field">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" required placeholder="Description:"></textarea>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Update</button>
+                <button type="button" class="btn btn-secondary">Return</button>
+            </div>
+        </form>
+    </div>
+</div>
