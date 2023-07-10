@@ -24,7 +24,8 @@ export class AppComponent {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         const url = event.urlAfterRedirects;
-        this.shouldShowNav = !['/', '/login', '/register', '/resetPassword'].includes(url);
+        
+        this.shouldShowNav = !['/', '/login', '/register', '/resetPassword' ].includes(url);
         this.shouldShowHeader = !['/', '/login', '/register', '/resetPassword'].includes(url);
       }
     });

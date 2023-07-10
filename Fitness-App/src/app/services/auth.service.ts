@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { Observable } from 'rxjs';
+import { Observable, map, tap } from 'rxjs';
 import { User } from '@firebase/auth-types';
 import { UserDataService } from './user-data.service';
 
@@ -73,5 +73,18 @@ export class AuthService {
 
   getCurrentUser(): Observable<User | null> {
     return this.currentUser;
+  }
+
+  isAuthenticated(): Observable<boolean> {
+    return this.afAuth.authState.pipe(
+      tap(user => {
+        if (user) {
+          console.log('User is authenticated');
+        } else {
+          console.log('User is not authenticated');
+        }
+      }),
+      map(user => !!user)
+    );
   }
 }

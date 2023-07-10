@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: linear-gradient(rgba(53, 88, 80, 0), rgba(18, 30, 56, -1.6)), url("/assets/images/healthy-food-composition-with-alarm-clock.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.button {
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+    background-color: #3f51b5;
+}
+
+p {
+    font-size: 8rem;
+    color: #f2f2f5
+}
