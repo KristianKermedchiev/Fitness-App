@@ -1,0 +1,110 @@
+.profile-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.update-form {
+    flex: 1 1 300px;
+    margin: 10px;
+    padding: 1.5rem;
+    border: 2px solid black;
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    box-sizing: border-box;
+    text-align: center;
+}
+
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical; 
+  }
+  
+ 
+  .form-field {
+    margin-bottom: 1rem;
+  }
+
+.update-form h2 {
+    margin-bottom: 2rem;
+}
+
+.form-field {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: inline-block;
+  width: 100%;
+  max-width: 200px;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-actions {
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    height: 3rem;
+    width: 8rem;
+}
+
+.btn-primary:hover {
+    background-color: #3f51b5;
+}
+
+.btn-secondary {
+    background-color: #555;
+    border: none;
+    color: #fff;
+    margin-left: 10px;
+    height: 3rem;
+    width: 8rem;
+}
+
+.btn-secondary:hover {
+    background-color: #333;
+}
+
+@media screen and (max-width: 768px) {
+
+    .user-info,
+    .update-form {
+        flex: 1 0 100%;
+        max-width: 100%;
+    }
+
+    label {
+        max-width: none;
+    }
+
+    .form-actions {
+        display: flex;
+        justify-content: center;
+        align-self: center;
+    }
+}

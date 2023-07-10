@@ -34,6 +34,7 @@ import { RecipesComponent } from './recipes/recipes.component';
 import { UpdateProfileComponent } from './my-profile/update-profile/update-profile.component';
 import { CreateComponent } from './recipes/create/create.component';
 import { DetailsComponent } from './recipes/details/details.component';
+import { EditComponent } from './recipes/edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { DetailsComponent } from './recipes/details/details.component';
     RecipesComponent,
     UpdateProfileComponent,
     CreateComponent,
-    DetailsComponent
+    DetailsComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,

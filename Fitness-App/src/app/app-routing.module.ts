@@ -13,6 +13,7 @@ import { MyProfileComponent } from './my-profile/my-profile.component';
 import { UpdateProfileComponent } from './my-profile/update-profile/update-profile.component';
 import { CreateComponent } from './recipes/create/create.component';
 import { DetailsComponent } from './recipes/details/details.component';
+import { EditComponent } from './recipes/edit/edit.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'profile/updateProfile', component: UpdateProfileComponent},
   { path: 'recipes/create', component: CreateComponent},
   { path: 'recipes/details/:id', component: DetailsComponent},
+  { path: 'recipes/details/:id/edit', component: EditComponent},
 ];
 
 @NgModule({

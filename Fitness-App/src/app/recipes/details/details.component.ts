@@ -65,6 +65,10 @@ export class DetailsComponent implements OnInit {
     this.router.navigate(['recipes']);
   }
 
+  routeToEdit() {
+    this.router.navigate(['recipes/details/:id/edit']);
+  }
+
   confirmDelete() {
     const confirmed = confirm('Are you sure you want to delete this recipe?');
     if (confirmed && this.recipeId) {

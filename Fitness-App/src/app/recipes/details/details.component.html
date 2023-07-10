@@ -15,6 +15,6 @@
         <button (click)="redirectToRecipes()">Back</button>
         <button *ngIf="isOwner" (click)="confirmDelete()">Delete</button>
 
-        <button *ngIf="isOwner">Edit</button>
+        <button *ngIf="isOwner" (click)="routeToEdit()">Edit</button>
     </div>
 </div>
