@@ -35,6 +35,7 @@ import { UpdateProfileComponent } from './my-profile/update-profile/update-profi
 import { CreateComponent } from './recipes/create/create.component';
 import { DetailsComponent } from './recipes/details/details.component';
 import { EditComponent } from './recipes/edit/edit.component';
+import { ForgotPasswordComponent } from './login/forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { EditComponent } from './recipes/edit/edit.component';
     UpdateProfileComponent,
     CreateComponent,
     DetailsComponent,
-    EditComponent
+    EditComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,

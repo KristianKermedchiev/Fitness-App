@@ -1,14 +1,14 @@
 <div class="login-container">
     <form class="form" (submit)="login()">
     <h2 class="h2">Login</h2>
-    <label class="label" for="username">Username</label>
+    <label class="label" for="email">E-mail</label>
     <input class="input" type="email" id="login-email" name="email" placeholder="Enter your email" [(ngModel)]="email" required>
     <label class="label" for="password">Password</label>
     <input class="input" type="password" id="login-password" name="password" placeholder="Enter your password" [(ngModel)]="password" required>
     <button class="button" type="submit">Login</button>
     <div>
-        <a class="register-link" routerLink="/register">Don't have an account?</a>
-        <a class="register-link" routerLink="/forgotPassword">Forgot Password?</a>
+        <a class="register-link" (click)="routeToRegister()">Don't have an account?</a>
+        <a class="register-link" (click)="routeToForgotPassword()">Forgot Password?</a>
     </div>
     </form>
 </div>

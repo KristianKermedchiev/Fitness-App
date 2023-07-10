@@ -13,6 +13,14 @@ export class LoginComponent {
 
   constructor(private afAuth: AngularFireAuth, private router: Router) { }
 
+  routeToRegister() {
+    this.router.navigate(['/register']);
+  }
+
+  routeToForgotPassword() {
+    this.router.navigate(['/resetPassword']);
+  }
+
   async login() {
     try {
       const userCredential = await this.afAuth.signInWithEmailAndPassword(this.email, this.password);
