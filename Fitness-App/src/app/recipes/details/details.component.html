@@ -40,8 +40,8 @@
             atque dicta quam? Autem laudantium vel tempore ullam. </p>
     </div>
     <div class="buttons">
-        <button>Back</button>
-        <button>Delete</button>
-        <button>Edit</button>
+        <button (click)="redirectToRecipes()">Back</button>
+        <button *ngIf="isOwner">Delete</button>
+        <button *ngIf="isOwner">Edit</button>
     </div>
 </div>
