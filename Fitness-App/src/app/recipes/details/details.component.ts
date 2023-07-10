@@ -66,7 +66,9 @@ export class DetailsComponent implements OnInit {
   }
 
   routeToEdit() {
-    this.router.navigate(['recipes/details/:id/edit']);
+    if (this.recipeId) {
+      this.router.navigate(['recipes/details', this.recipeId, 'edit']);
+    }
   }
 
   confirmDelete() {

@@ -1,46 +1,46 @@
-<div class="profile-container">
+<div class="profile-container" *ngIf="recipe">
     <div class="update-form">
         <h2>Edit recipe</h2>
-        <form>
+        <form (ngSubmit)="updateRecipe(form.value)" #form="ngForm">
             <div class="form-field">
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required placeholder="Name" >
+                <input type="text" id="name" name="name" required placeholder="Name" [(ngModel)]="recipe.name">
             </div>
             <div class="form-field">
                 <label for="difficulty">Difficulty:</label>
-                
-                    <select id="difficulty" name="difficulty" >
-                        <option value="1">1 - Very Easy</option>
-                        <option value="2">2 - Easy</option>
-                        <option value="3">3 - Medium</option>
-                        <option value="4">4 - Hard </option>
-                        <option value="5">5 - Very Hard</option>
-                    </select>
+                <select id="difficulty" name="difficulty" [(ngModel)]="recipe.difficulty">
+                    <option value="1">1 - Very Easy</option>
+                    <option value="2">2 - Easy</option>
+                    <option value="3">3 - Medium</option>
+                    <option value="4">4 - Hard</option>
+                    <option value="5">5 - Very Hard</option>
+                </select>
             </div>
             <div class="form-field">
                 <label for="spicy">Spicy:</label>
-                <select id="spicy" name="spicy" >
+                <select id="spicy" name="spicy" [(ngModel)]="recipe.spicy">
                     <option value="spicy">Spicy</option>
                     <option value="not-spicy">Not Spicy</option>
                 </select>
             </div>
             <div class="form-field">
                 <label for="vegan">Vegan:</label>
-                <select id="vegan" name="vegan" >
+                <select id="vegan" name="vegan" [(ngModel)]="recipe.vegan">
                     <option value="vegan">Vegan</option>
                     <option value="not-vegan">Not Vegan</option>
                 </select>
             </div>
             <div class="form-field">
                 <label for="picture">Picture:</label>
-                <input type="text" id="picture" name="picture" required placeholder="URL" >
+                <input type="text" id="picture" name="picture" required placeholder="URL" [(ngModel)]="recipe.picture">
             </div>
             <div class="form-field">
                 <label for="description">Description:</label>
-                <textarea id="description" name="description" required placeholder="Description"></textarea>
+                <textarea id="description" name="description" required placeholder="Description"
+                    [(ngModel)]="recipe.description"></textarea>
             </div>
             <div class="form-actions">
-                <button type="submit" class="btn btn-primary">Create</button>
+                <button type="submit" class="btn btn-primary">Update</button>
                 <button type="button" class="btn btn-secondary" (click)="redirectToRecipes()">Return</button>
             </div>
         </form>
