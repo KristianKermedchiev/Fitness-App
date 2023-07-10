@@ -53,7 +53,9 @@ export class EditComponent implements OnInit {
   }
 
   redirectToRecipes() {
-    this.router.navigate(['recipes']);
+    if (this.recipeId) {
+      this.router.navigate(['recipes/details', this.recipeId]);
+    }
   }
 
   updateRecipe(form: any) {
