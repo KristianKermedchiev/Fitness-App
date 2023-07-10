@@ -64,4 +64,18 @@ export class DetailsComponent implements OnInit {
   redirectToRecipes() {
     this.router.navigate(['recipes']);
   }
+
+  confirmDelete() {
+    const confirmed = confirm('Are you sure you want to delete this recipe?');
+    if (confirmed && this.recipeId) {
+      this.firestore.collection('recipes').doc(this.recipeId).delete()
+        .then(() => {
+          console.log('Recipe deleted successfully!');
+          this.router.navigate(['recipes']);
+        })
+        .catch((error) => {
+          console.error('Error deleting recipe:', error);
+        });
+    }
+  }
 }

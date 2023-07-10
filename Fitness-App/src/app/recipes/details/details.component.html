@@ -1,47 +1,20 @@
-<div class="recipe-details">
+<div class="recipe-details" *ngIf="(recipe$ | async) as recipe">
     <div class="img">
-        <img src="/assets/images/healthy-food-composition-with-alarm-clock.jpg" alt="">
+        <img [src]="recipe.picture" alt="">
     </div>
     <div class="info">
-        <h1>Name: Hamburger</h1>
-        <span><i class="fa-sharp fa-solid fa-pepper-hot"></i>
-            Spicy: Spicy</span>
-        <span><i class="fa-sharp fa-solid fa-leaf"></i>
-            Vegan: Non-vegan</span>
-        <span><i class="fa-solid fa-star"></i>
-            Difficulty: 5</span>
-       
-
+        <h1>Name: {{ recipe.name }}</h1>
+        <span><i class="fa-sharp fa-solid fa-pepper-hot"></i> Spicy: {{ recipe.spicy }}</span>
+        <span><i class="fa-sharp fa-solid fa-leaf"></i> Vegan: {{ recipe.vegan }}</span>
+        <span><i class="fa-solid fa-star"></i> Difficulty: {{ recipe.difficulty }}</span>
     </div>
     <div class="description">
-        <p>Description: Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Iure quasi deleniti sequi dolore id laudantium consequuntur est distinctio ab repudiandae deserunt
-            possimus,
-            atque dicta quam? Autem laudantium vel tempore ullam.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Iure quasi deleniti sequi dolore id laudantium consequuntur est distinctio ab repudiandae deserunt
-            possimus,
-            atque dicta quam? Autem laudantium vel tempore ullam.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Iure quasi deleniti sequi dolore id laudantium consequuntur est distinctio ab repudiandae deserunt
-            possimus,
-            atque dicta quam? Autem laudantium vel tempore ullam.
-            orem ipsum dolor sit amet consectetur adipisicing elit.
-            Iure quasi deleniti sequi dolore id laudantium consequuntur est distinctio ab repudiandae deserunt
-            possimus,
-            atque dicta quam? Autem laudantium vel tempore ullam.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Iure quasi deleniti sequi dolore id laudantium consequuntur est distinctio ab repudiandae deserunt
-            possimus,
-            atque dicta quam? Autem laudantium vel tempore ullam.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Iure quasi deleniti sequi dolore id laudantium consequuntur est distinctio ab repudiandae deserunt
-            possimus,
-            atque dicta quam? Autem laudantium vel tempore ullam. </p>
+        <p>{{ recipe.description }}</p>
     </div>
     <div class="buttons">
         <button (click)="redirectToRecipes()">Back</button>
-        <button *ngIf="isOwner">Delete</button>
+        <button *ngIf="isOwner" (click)="confirmDelete()">Delete</button>
+
         <button *ngIf="isOwner">Edit</button>
     </div>
 </div>
