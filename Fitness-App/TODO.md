@@ -1,9 +1,6 @@
 1. Error handling, validation, messages on all forms;
-2. Route guards;
-3. Error Page;
 4. Documentation;
 5. Tests;
-6. Deployment;
 
 Extra: add loader
 Extra: add cloud for image saving
