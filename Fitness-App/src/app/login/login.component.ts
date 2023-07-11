@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
+import { errorParser } from '../utils/errorParser';
 
 @Component({
   selector: 'app-login',
@@ -10,6 +11,7 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   email: string = '';
   password: string = '';
+  error: string = '';
 
   constructor(private afAuth: AngularFireAuth, private router: Router) { }
 
@@ -25,9 +27,18 @@ export class LoginComponent {
     try {
       const userCredential = await this.afAuth.signInWithEmailAndPassword(this.email, this.password);
       console.log('Logged in successfully!');
-      this.router.navigate(['/dashboard']); // Adjust the desired route
-    } catch (error) {
+      this.router.navigate(['/dashboard']); 
+    } catch (error: any) {
       console.error('Error signing in:', error);
+      if (typeof error === 'string') {
+        this.error = errorParser(error); 
+      } else if (error instanceof Error) {
+        this.error = errorParser(error.message); 
+      } else if (typeof error.message === 'string') {
+        this.error = errorParser(error.message); 
+      } else {
+        this.error = 'Something went wrong';
+      }
     }
   }
 }

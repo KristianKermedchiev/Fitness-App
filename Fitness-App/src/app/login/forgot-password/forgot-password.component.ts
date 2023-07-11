@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { errorParser } from 'src/app/utils/errorParser';
 
 @Component({
   selector: 'app-forgot-password',
@@ -10,6 +11,8 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 export class ForgotPasswordComponent {
   
   email: string = '';
+  error: string = '';
+  success: string = '';
 
   constructor(private router: Router, private afAuth: AngularFireAuth) {}
 
@@ -20,12 +23,11 @@ export class ForgotPasswordComponent {
   resetPassword() {
     this.afAuth.sendPasswordResetEmail(this.email)
       .then(() => {
-        console.log('password reset');
-        // You can show a success message to the user
+        this.success = 'Please check your email!';
       })
       .catch((error) => {
-        console.error('Error:', error);
-        // You can show an error message to the user
+        console.log(error)
+        this.error = errorParser(error);
       });
   }
 }

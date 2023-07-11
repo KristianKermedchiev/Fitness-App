@@ -6,6 +6,9 @@
     <label class="label" for="password">Password</label>
     <input class="input" type="password" id="login-password" name="password" placeholder="Enter your password" [(ngModel)]="password" required>
     <button class="button" type="submit">Login</button>
+    <div class="error">
+        {{ error }}
+    </div>
     <div>
         <a class="register-link" (click)="routeToRegister()">Don't have an account?</a>
         <a class="register-link" (click)="routeToForgotPassword()">Forgot Password?</a>
