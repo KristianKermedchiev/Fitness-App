@@ -23,10 +23,10 @@ import { IdParamGuard } from './guards/idParam.guard';
 const routes: Routes = [
 
   // Does not need auth
-  { path: '', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'resetPassword', component: ForgotPasswordComponent},
+  { path: '', component: HomeComponent, pathMatch: 'full' },
+  { path: 'login', component: LoginComponent, pathMatch: 'full' },
+  { path: 'register', component: RegisterComponent, pathMatch: 'full' },
+  { path: 'resetPassword', component: ForgotPasswordComponent, pathMatch: 'full'},
   
   // Needs auth
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},

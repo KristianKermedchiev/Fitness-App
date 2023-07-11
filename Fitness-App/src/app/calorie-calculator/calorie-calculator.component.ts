@@ -39,7 +39,10 @@ export class CalorieCalculatorComponent {
 
     const maintenanceCalories = bmr * activity;
 
-    this.result = maintenanceCalories;
-    this.bmr = bmr;
+    const roundedMaintenanceCalories = maintenanceCalories.toFixed(2);
+    const roundedBMR = bmr.toFixed(2);
+
+    this.result = +roundedMaintenanceCalories;
+    this.bmr = +roundedBMR;
   }
 }
