@@ -8,9 +8,13 @@
       <label class="label" for="confirm-password">Confirm Password</label>
       <input class="input" type="password" id="confirm-password" name="confirmPassword" placeholder="Confirm your password" [(ngModel)]="confirmPassword" required>
       <button class="button" type="submit">Register</button>
+      <div class="error">
+        {{ error }}
+      </div>
       <div class="already-have-account">
         <p>Already have an account? <a routerLink="/login">Login here</a></p>
       </div>
+      
     </form>
   </div>
   

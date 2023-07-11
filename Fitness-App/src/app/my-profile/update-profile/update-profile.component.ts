@@ -16,6 +16,9 @@ export class UpdateProfileComponent {
   age: string;
   email: string;
   profilePicture: string;
+  isError: boolean = false;
+  isSuccess: boolean = false;
+  message: string = '';
 
   constructor(
     private afAuth: AngularFireAuth,
@@ -29,6 +32,7 @@ export class UpdateProfileComponent {
     this.age = '';
     this.email = '';
     this.profilePicture = '';
+    this.message = '';
   }
 
   async updateProfile() {
@@ -67,11 +71,8 @@ export class UpdateProfileComponent {
       updateData['email'] = this.email;
       user.updateEmail(this.email)
         .then(() => {
-          console.log('Email address updated in authentication!');
         })
-        .catch((error) => {
-          console.log('Error updating email address in authentication:', error);
-          // Handle the error or show an error message
+        .catch(() => {
         });
     }
 
@@ -84,8 +85,6 @@ export class UpdateProfileComponent {
       .doc(userUid)
       .update(updateData)
       .then(() => {
-        console.log('Update successful!');
-
         this.firstName = '';
         this.lastName = '';
         this.gender = '';
@@ -93,11 +92,14 @@ export class UpdateProfileComponent {
         this.age = '';
         this.email = '';
         this.profilePicture = '';
-
-        // Handle any additional logic or success messages
+        this.isSuccess = true;
+        this.isError = false;
+        this.message = 'Update Successful!'
       })
       .catch((error) => {
-        // Handle the error
+        this.isSuccess = false;
+        this.isError = true;
+        this.message = 'Error!'
       });
   }
 

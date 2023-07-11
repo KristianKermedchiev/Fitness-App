@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
+import { errorParser } from '../utils/errorParser';
 
 @Component({
   selector: 'app-register',
@@ -12,7 +13,7 @@ export class RegisterComponent {
   email!: string;
   password!: string;
   confirmPassword!: string;
-
+  error: string = '';
 
   constructor(private authService: AuthService, private router: Router) { }
 
@@ -20,12 +21,10 @@ export class RegisterComponent {
     const { email, password, confirmPassword } = form.value;
     this.authService.register(email, password, confirmPassword)
       .then(() => {
-        console.log('Registration successful!');
-        this.router.navigate(['/login']); // Redirect to Login page.
+        this.router.navigate(['/login']); 
       })
       .catch((error) => {
-        console.error('Registration error:', error);
-        // Handle registration error
+        this.error = errorParser(error);
       });
   }
 }

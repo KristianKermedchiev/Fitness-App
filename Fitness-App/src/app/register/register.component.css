@@ -23,6 +23,12 @@
     backdrop-filter: blur(8px);
 }
 
+.error {
+    font-size: 1rem;
+    color: red;
+    margin-top: 1rem;
+}
+
 .register-container .label {
     font-size: 2rem;
     margin-bottom: 0.5rem;

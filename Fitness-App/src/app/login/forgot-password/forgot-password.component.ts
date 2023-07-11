@@ -9,25 +9,30 @@ import { errorParser } from 'src/app/utils/errorParser';
   styleUrls: ['./forgot-password.component.css']
 })
 export class ForgotPasswordComponent {
-  
+
   email: string = '';
-  error: string = '';
-  success: string = '';
+  isError: boolean = false;
+  isSuccess: boolean = false;
+  message: string = '';
 
-  constructor(private router: Router, private afAuth: AngularFireAuth) {}
+  constructor(private router: Router, private afAuth: AngularFireAuth) { }
 
-  routeToLogin(){
+  routeToLogin() {
     this.router.navigate(['/login']);
   }
 
   resetPassword() {
     this.afAuth.sendPasswordResetEmail(this.email)
       .then(() => {
-        this.success = 'Please check your email!';
+        this.isSuccess = true;
+        this.isError = false;
+        this.message = 'Please check your email!';
       })
       .catch((error) => {
-        console.log(error)
-        this.error = errorParser(error);
+        console.log(error);
+        this.isSuccess = false;
+        this.isError = true;
+        this.message = errorParser(error);
       });
   }
 }

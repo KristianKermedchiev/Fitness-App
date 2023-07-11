@@ -24,6 +24,12 @@ export class StatisticsComponent {
   workoutRoutine: string;
   steps: string;
 
+  isError: boolean = false;
+  isSuccess: boolean = false;
+  nutritionMessage: string = '';
+  weightMessage: string = '';
+  routineMessage: string = '';
+
   constructor(private afAuth: AngularFireAuth, private firestore: AngularFirestore) {
     this.dailyCalories = '';
     this.proteins = '';
@@ -38,6 +44,10 @@ export class StatisticsComponent {
     this.sleep = '';
     this.workoutRoutine = '';
     this.steps = '';
+
+    this.nutritionMessage = '';
+    this.weightMessage = '';
+    this.routineMessage = '';
   }
 
   async updateNutrition() {
@@ -77,18 +87,19 @@ export class StatisticsComponent {
       .doc(userUid)
       .update(updateData)
       .then(() => {
-        console.log('Update successful!');
-        // Clear the form fields
         this.dailyCalories = '';
         this.proteins = '';
         this.carbs = '';
         this.fats = '';
         this.dailyWaterIntake = '';
-
-        // Handle any additional logic or success messages
+        this.isSuccess = true;
+        this.isError = false;
+        this.nutritionMessage = 'Update Successful!'
       })
       .catch((error) => {
-        // Handle the error
+        this.isSuccess = false;
+        this.isError = true;
+        this.nutritionMessage = 'Error!'
       });
   }
 
@@ -121,16 +132,17 @@ export class StatisticsComponent {
       .doc(userUid)
       .update(updateData)
       .then(() => {
-        console.log('Update successful!');
-
-        // Clear the form fields
         this.currentWeight = '';
         this.lastWeekWeight = '';
         this.weightGoal = '';
-        // Handle any additional logic or success messages
+        this.isSuccess = true;
+        this.isError = false;
+        this.weightMessage = 'Update Successful!'
       })
       .catch((error) => {
-        // Handle the error
+        this.isSuccess = false;
+        this.isError = true;
+        this.weightMessage = 'Error!'
       });
   }
 
@@ -163,15 +175,17 @@ export class StatisticsComponent {
       .doc(userUid)
       .update(updateData)
       .then(() => {
-        console.log('Update successful!');
-        // Clear the form fields
         this.sleep = '';
         this.workoutRoutine = '';
         this.steps = '';
-        // Handle any additional logic or success messages
+        this.isSuccess = true;
+        this.isError = false;
+        this.routineMessage = 'Update Successful!'
       })
       .catch((error) => {
-        // Handle the error
+        this.isSuccess = false;
+        this.isError = true;
+        this.routineMessage = 'Error!'
       });
   }  
 }

@@ -37,6 +37,9 @@
                 <button type="submit" class="btn btn-primary" >Update</button>
                 <button type="button" class="btn btn-secondary" (click)="redirectToProfile()" >Return</button>
             </div>
+            <div class="message" [ngClass]="{ 'error': isError, 'success': isSuccess }">
+                {{ message }}
+            </div>
         </form>
     </div>
 </div>

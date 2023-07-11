@@ -1,4 +1,4 @@
-1. Error handling, validation, messages on all forms;
+1. Error handling, validation;
 4. Documentation;
 5. Tests;
 

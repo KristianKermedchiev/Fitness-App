@@ -17,8 +17,16 @@
     text-align: center;
 }
 
-.update-form h2 {
-    margin-bottom: 2rem;
+.error {
+    font-size: 1rem;
+    color: red;
+    margin-top: 1rem;
+}
+
+.success  {
+    font-size: 1rem;
+    color: blue;
+    margin-top: 1rem;
 }
 
 .form-field {

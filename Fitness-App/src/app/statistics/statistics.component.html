@@ -10,6 +10,9 @@
       <input type="text" name="dailyWaterIntake" class="update-input-field" placeholder="Daily Water Intake"
         [(ngModel)]="dailyWaterIntake" />
       <button type="submit" class="update-submit-btn">Update</button>
+      <div class="message" [ngClass]="{ 'error': isError, 'success': isSuccess }">
+        {{ nutritionMessage }}
+    </div>
     </form>
   </div>
 
@@ -23,6 +26,9 @@
       <input type="text" name="weightGoal" class="update-input-field" placeholder="Goal Weight"
         [(ngModel)]="weightGoal" />
       <button type="submit" class="update-submit-btn">Update</button>
+      <div class="message" [ngClass]="{ 'error': isError, 'success': isSuccess }">
+        {{ weightMessage }}
+    </div>
     </form>
   </div>
 
@@ -34,6 +40,9 @@
         [(ngModel)]="workoutRoutine" />
       <input type="text" name="steps" class="update-input-field" placeholder="Daily Steps" [(ngModel)]="steps" />
       <button type="submit" class="update-submit-btn">Update</button>
+      <div class="message" [ngClass]="{ 'error': isError, 'success': isSuccess }">
+        {{ routineMessage }}
+    </div>
     </form>
   </div>
 </div>

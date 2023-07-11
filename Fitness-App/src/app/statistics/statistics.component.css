@@ -15,6 +15,18 @@
   box-sizing: border-box;
 }
 
+.error {
+  font-size: 1rem;
+  color: red;
+  margin-top: 1rem;
+}
+
+.success  {
+  font-size: 1rem;
+  color: blue;
+  margin-top: 1rem;
+}
+
 .image-update-h2 {
   text-align: center;
   padding: 30px 0;
