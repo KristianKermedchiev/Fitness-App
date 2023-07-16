@@ -8,8 +8,15 @@
             <button class="logout-button" (click)="logout()">Logout</button>
         </div>
         <div class="top-nav-menu-item">
-            <button class="profile-picture-circle"> 
-                <img src="{{userData?.profilePicture}}" alt="Profile Picture">
+            <button class="profile-picture-circle">
+                <!-- The "userData?.profilePicture" will display the user's profile picture if available, otherwise it will show the default profile picture -->
+                <img *ngIf="userData?.profilePicture; else defaultProfilePic" [src]="userData?.profilePicture"
+                    alt="User's profile picture">
+
+                <!-- Default profile picture -->
+                <ng-template #defaultProfilePic>
+                    <img src="/assets/images/profile.png" alt="Default Profile Picture">
+                </ng-template>
             </button>
         </div>
     </div>
