@@ -53,8 +53,6 @@ export class AuthService {
               // Retrieve user data using the UserDataService
               this.userDataService.getUserData(user.uid).subscribe((userData) => {
                 // Handle the retrieved user data
-                console.log(userData);
-                // You can store the user data in a local variable or use it as needed
               });
             });
         } else {

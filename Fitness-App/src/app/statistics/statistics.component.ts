@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { weightValidator } from '../utils/validators';
+import { routineValidator } from '../utils/validators';
+import { nutritionValidator } from '../utils/validators';
 
 @Component({
   selector: 'app-statistics',
@@ -60,6 +63,15 @@ export class StatisticsComponent {
 
     const userUid = user.uid;
 
+    const isNutritionValid = nutritionValidator(this.dailyCalories, this.proteins, this.carbs, this.fats, this.dailyWaterIntake);
+
+    if (!isNutritionValid) {
+      this.isSuccess = false;
+      this.isError = true;
+      this.nutritionMessage = 'Invalid data!'
+      return;
+    }
+
     const updateData: { [key: string]: any } = {};
 
     if (this.proteins !== '') {
@@ -113,6 +125,15 @@ export class StatisticsComponent {
 
     const userUid = user.uid;
 
+    const isWeightvalid = weightValidator(this.currentWeight, this.lastWeekWeight, this.weightGoal);
+
+    if (!isWeightvalid) {
+      this.isSuccess = false;
+      this.isError = true;
+      this.weightMessage = 'Invalid data!'
+      return;
+    }
+
     const updateData: { [key: string]: any } = {};
 
     if (this.currentWeight !== '') {
@@ -155,6 +176,15 @@ export class StatisticsComponent {
     }
   
     const userUid = user.uid;
+
+    const isRoutineValid = routineValidator(this.sleep, this.workoutRoutine, this.steps);
+
+    if (!isRoutineValid) {
+      this.isSuccess = false;
+      this.isError = true;
+      this.routineMessage = 'Invalid data!'
+      return;
+    }
     
     const updateData: { [key: string]: any } = {};
   

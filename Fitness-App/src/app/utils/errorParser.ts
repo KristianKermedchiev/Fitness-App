@@ -30,6 +30,5 @@ export function errorParser(value: string): string {
             parsedError = 'Something went wrong';
             break;
     }
-
     return parsedError;
 }
