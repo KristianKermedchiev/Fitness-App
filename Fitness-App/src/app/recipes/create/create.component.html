@@ -44,6 +44,9 @@
                 <button type="submit" class="btn btn-primary">Create</button>
                 <button type="button" class="btn btn-secondary" (click)="redirectToRecipes()">Return</button>
             </div>
+            <div class="message" [ngClass]="{ 'error': isError}">
+                {{ message }}
+            </div>
         </form>
     </div>
 </div>

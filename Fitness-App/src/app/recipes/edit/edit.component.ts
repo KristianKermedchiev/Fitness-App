@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { recipeValidator } from 'src/app/utils/validators';
 
 interface Recipe {
   owner: string;
@@ -11,6 +12,7 @@ interface Recipe {
   picture: string;
   spicy: string;
   vegan: string;
+  
 }
 
 @Component({
@@ -30,6 +32,8 @@ export class EditComponent implements OnInit {
     spicy: '',
     vegan: ''
   };
+    isError: boolean = false;
+    message: string = '';
 
   constructor(
     private route: ActivatedRoute,
@@ -60,14 +64,24 @@ export class EditComponent implements OnInit {
 
   updateRecipe(form: any) {
     if (this.recipeId && this.recipe) {
+      const { name, difficulty, spicy, vegan, picture, description } = form;
+
+      const isValidRecipe = recipeValidator(name, difficulty, spicy, vegan, picture, description);
+
+      if (!isValidRecipe) {
+        this.isError = true;
+        this.message = 'Invalid data!'
+        return;
+      }
+
       const updatedRecipe: Recipe = {
         ...this.recipe,
-        name: form.name,
-        difficulty: form.difficulty,
-        spicy: form.spicy,
-        vegan: form.vegan,
-        picture: form.picture,
-        description: form.description
+        name,
+        difficulty,
+        spicy,
+        vegan,
+        picture,
+        description
       };
 
       this.firestore

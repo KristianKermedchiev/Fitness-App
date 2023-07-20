@@ -6,6 +6,12 @@
     flex-wrap: wrap;
 }
 
+.error {
+    font-size: 1rem;
+    color: red;
+    margin-top: 1rem;
+}
+
 .update-form {
     flex: 1 1 300px;
     margin: 10px;

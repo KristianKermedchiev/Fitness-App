@@ -89,6 +89,18 @@ export function profileValidator(firstName: string, lastName: string, email: str
     if(firstName.length > 20 || lastName.length > 20 || email.length > 30 || height.length > 4 || age.length > 3){
         return false;
     }
+
+    return true; 
+}
+
+export function recipeValidator (name: string, difficulty: string, spicy: string, vegan: string, picture: string, description: string){
+    if(name.length > 20 || description.length > 999){
+        return false;
+    }
+
+    if (!name || !difficulty || !spicy || !vegan || !picture ||!description) {
+        return false;
+    }
     
     return true; 
 }

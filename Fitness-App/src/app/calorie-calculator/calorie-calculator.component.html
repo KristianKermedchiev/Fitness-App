@@ -63,12 +63,12 @@
           <h3>Result: {{ result }} </h3>
           <p id="result"></p>
         </div>
-        <div class="message" [ngClass]="{ 'error': isError}">
-          {{ nutritionMessage }}
-      </div>
         <div class="form-group">
           <button type="submit" class="btn btn-primary">Calculate</button>
         </div>
+        <div class="message" [ngClass]="{ 'error': isError}">
+          {{ nutritionMessage }}
+      </div>
       </form>
     </div>
   </div>

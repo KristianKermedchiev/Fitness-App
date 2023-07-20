@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { RecipeService } from 'src/app/services/recipe.service';
 import { AuthService } from 'src/app/services/auth.service';
+import { recipeValidator } from 'src/app/utils/validators';
 
 @Component({
   selector: 'app-create',
@@ -10,6 +11,9 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class CreateComponent {
   recipe: any = {};
+  
+  isError: boolean = false;
+  message: string = '';
 
   constructor(
     private router: Router,
@@ -20,9 +24,19 @@ export class CreateComponent {
   createRecipe() {
     this.authService.getCurrentUser().subscribe((currentUser) => {
       if (currentUser) {
-        const recipe = { ...this.recipe }; 
+        const { name, difficulty, spicy, vegan, picture, description } = this.recipe;
+
+        const isValidRecipe = recipeValidator(name, difficulty, spicy, vegan, picture, description);
+
+        if (!isValidRecipe) {
+          this.isError = true;
+          this.message = 'Invalid data!'
+          return;
+        }
+
+        const recipe = { ...this.recipe };
         recipe.owner = currentUser.uid;
-        
+
         this.recipeService.addRecipe(recipe)
           .then((docRef) => {
             console.log('Recipe document written with ID:', docRef.id);
