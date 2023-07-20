@@ -26,7 +26,6 @@ export function errorParser(value: string): string {
             parsedError = 'Email is already in use.'
             break;
         default:
-
             parsedError = 'Something went wrong';
             break;
     }
