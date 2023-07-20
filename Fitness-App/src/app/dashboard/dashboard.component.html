@@ -1,12 +1,25 @@
-<div class="top-section">
-    <app-top-widgets [userData]="userData"></app-top-widgets>
+<div class="loading-container" *ngIf="isLoading()">
+  <div class="lds-ellipsis">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
   </div>
-  
-  <div class="mid-section">
-    <app-mid-widgets [userData]="userData"></app-mid-widgets>
-  </div>
-  
-  <div class="bottom-section">
-    <app-bottom-widgets [userData]="userData"></app-bottom-widgets>
-  </div>
-  
+</div>
+
+
+<div *ngIf="isLoading()" class="loading-overlay">
+  <app-loading-spinner></app-loading-spinner>
+</div>
+
+<div *ngIf="!isLoading()" class="top-section">
+  <app-top-widgets [userData]="userData"></app-top-widgets>
+</div>
+
+<div *ngIf="!isLoading()" class="mid-section">
+  <app-mid-widgets [userData]="userData"></app-mid-widgets>
+</div>
+
+<div *ngIf="!isLoading()" class="bottom-section">
+  <app-bottom-widgets [userData]="userData"></app-bottom-widgets>
+</div>
