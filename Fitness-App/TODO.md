@@ -1,6 +1,5 @@
-1. Error handling, validation;
-4. Documentation;
-5. Tests;
+1. Documentation;
+2. Tests;
+3. Loader;
 
-Extra: add loader
-Extra: add cloud for image saving
+4. Extra: add cloud for image saving
