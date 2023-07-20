@@ -37,6 +37,8 @@ import { DetailsComponent } from './recipes/details/details.component';
 import { EditComponent } from './recipes/edit/edit.component';
 import { ForgotPasswordComponent } from './login/forgot-password/forgot-password.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +64,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     DetailsComponent,
     EditComponent,
     ForgotPasswordComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -74,7 +77,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     AngularFirestoreModule,
     HighchartsChartModule,
     FontAwesomeModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
