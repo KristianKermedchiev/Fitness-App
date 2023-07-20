@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { calculatorValidator } from '../utils/validators';
 
 @Component({
   selector: 'app-calorie-calculator',
@@ -11,6 +12,9 @@ export class CalorieCalculatorComponent {
   result: number | null = null;
   bmr: number | null = null;
   calorieForm: FormGroup;
+  isError: boolean = false;
+  nutritionMessage: string = '';
+
 
   constructor(private formBuilder: FormBuilder) {
     this.calorieForm = this.formBuilder.group({
@@ -24,11 +28,25 @@ export class CalorieCalculatorComponent {
 
   calculateBMR(): void {
     const formValues = this.calorieForm.value;
-    const age = +formValues.age;
+    const age = formValues.age;
     const sex = formValues.sex;
-    const height = +formValues.height;
-    const weight = +formValues.weight;
-    const activity = +formValues.activity;
+    const height = formValues.height;
+    const weight = formValues.weight;
+    const activity = formValues.activity;
+
+    const isNutritionValid = calculatorValidator(age, sex, height, weight, activity);
+
+    if (!isNutritionValid) {
+      this.isError = true;
+      this.nutritionMessage = 'Invalid data!'
+
+      setTimeout(() => {
+        this.isError = false;
+        this.nutritionMessage = '';
+      }, 5000);
+      
+      return;
+    }
 
     let bmr: number;
     if (sex === 'm') {

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { profileValidator } from 'src/app/utils/validators';
 
 @Component({
   selector: 'app-update-profile',
@@ -50,6 +51,7 @@ export class UpdateProfileComponent {
     if (this.firstName !== '') {
       updateData['firstName'] = this.firstName;
     }
+   
 
     if (this.lastName !== '') {
       updateData['lastName'] = this.lastName;
@@ -80,6 +82,17 @@ export class UpdateProfileComponent {
       updateData['profilePicture'] = this.profilePicture;
     }
 
+    const validateProfileInfo = profileValidator(this.firstName, this.lastName, this.email, this.height, this.age);
+
+    if (!validateProfileInfo) {
+      this.isSuccess = false;
+      this.isError = true;
+      this.message = 'Invalid data!'
+      return;
+    } else if (this.firstName === '' && this.lastName === '' && this.gender === '' && this.height === '' && this.age === '' && this.email === '' && this.profilePicture === ''){
+      return;
+    } else {
+
     this.firestore
       .collection('users')
       .doc(userUid)
@@ -96,12 +109,13 @@ export class UpdateProfileComponent {
         this.isError = false;
         this.message = 'Update Successful!'
       })
-      .catch((error) => {
+      .catch(() => {
         this.isSuccess = false;
         this.isError = true;
         this.message = 'Error!'
       });
   }
+}
 
   redirectToProfile() {
     this.router.navigate(['/profile']);
