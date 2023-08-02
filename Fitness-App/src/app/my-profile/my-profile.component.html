@@ -1,50 +1,56 @@
-<div class="profile-container">
-  <div class="top">
-    <h2 class="profile-heading">User Information</h2>
-    <div class="profilePic">
-      <!-- The "userData?.profilePicture" will display the user's profile picture if available, otherwise it will show the default profile picture -->
-      <img *ngIf="userData?.profilePicture; else defaultProfilePic" [src]="userData?.profilePicture"
-        alt="User's profile picture">
+<div *ngIf="isLoading()" class="loader">
+  <app-loading-spinner></app-loading-spinner>
+</div>
 
-      <!-- Default profile picture -->
-      <ng-template #defaultProfilePic>
-        <img src="/assets/images/profile.png" alt="Default Profile Picture">
-      </ng-template>
-    </div>
-  </div>
+<div *ngIf="!isLoading()">
+  <div class="profile-container">
+    <div class="top">
+      <h2 class="profile-heading">User Information</h2>
+      <div class="profilePic">
+        <!-- The "userData?.profilePicture" will display the user's profile picture if available, otherwise it will show the default profile picture -->
+        <img *ngIf="userData?.profilePicture; else defaultProfilePic" [src]="userData?.profilePicture"
+          alt="User's profile picture">
 
-  <div class="info-fields">
-    <div class="left">
-      <div class="info-field">
-        <span class="field-label">First Name:</span>
-        <span>{{userData?.firstName}}</span>
-      </div>
-      <div class="info-field">
-        <span class="field-label">Last Name:</span>
-        <span>{{userData?.lastName}}</span>
-      </div>
-      <div class="info-field">
-        <span class="field-label">Email:</span>
-        <span>{{userData?.email}}</span>
+        <!-- Default profile picture -->
+        <ng-template #defaultProfilePic>
+          <img src="/assets/images/profile.png" alt="Default Profile Picture">
+        </ng-template>
       </div>
     </div>
-    <div class="right">
-      <div class="info-field">
-        <span class="field-label">Height:</span>
-        <span>{{userData?.height}}</span>
+
+    <div class="info-fields">
+      <div class="left">
+        <div class="info-field">
+          <span class="field-label">First Name:</span>
+          <span>{{userData?.firstName}}</span>
+        </div>
+        <div class="info-field">
+          <span class="field-label">Last Name:</span>
+          <span>{{userData?.lastName}}</span>
+        </div>
+        <div class="info-field">
+          <span class="field-label">Email:</span>
+          <span>{{userData?.email}}</span>
+        </div>
       </div>
-      <div class="info-field">
-        <span class="field-label">Age:</span>
-        <span>{{userData?.age}}</span>
-      </div>
-      <div class="info-field">
-        <span class="field-label">Gender:</span>
-        <span>{{userData?.gender}}</span>
+      <div class="right">
+        <div class="info-field">
+          <span class="field-label">Height:</span>
+          <span>{{userData?.height}}</span>
+        </div>
+        <div class="info-field">
+          <span class="field-label">Age:</span>
+          <span>{{userData?.age}}</span>
+        </div>
+        <div class="info-field">
+          <span class="field-label">Gender:</span>
+          <span>{{userData?.gender}}</span>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="button">
-    <button type="submit" class="btn btn-primary" (click)="redirectToUpdateProfile()">Update Info</button>
+    <div class="button">
+      <button type="submit" class="btn btn-primary" (click)="redirectToUpdateProfile()">Update Info</button>
+    </div>
   </div>
 </div>

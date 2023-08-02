@@ -2,7 +2,7 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service'
 import { User } from '@firebase/auth-types';
 import { UserDataService } from '../services/user-data.service';
-import { LoadingService } from '../services/loading.service'; // Import the LoadingService
+import { LoadingService } from '../services/loading.service';
 
 @Component({
   selector: 'app-dashboard',

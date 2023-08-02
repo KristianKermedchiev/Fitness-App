@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
+import { LoadingService } from '../services/loading.service';
 
 @Component({
   selector: 'app-recipes',
@@ -14,7 +15,8 @@ export class RecipesComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private firestore: AngularFirestore
+    private firestore: AngularFirestore,
+    private loadingService: LoadingService
   ) {
     this.recipesCollection = this.firestore.collection('recipes');
     this.recipes = this.recipesCollection.valueChanges();
@@ -25,7 +27,9 @@ export class RecipesComponent implements OnInit {
   }
 
   fetchRecipes() {
+    this.loadingService.show(); 
     this.recipes.subscribe((recipes) => {
+      this.loadingService.hide(); 
     });
   }
 
@@ -37,4 +41,7 @@ export class RecipesComponent implements OnInit {
     this.router.navigate(['recipes/details', recipeId]);
   }
   
+  isLoading(): boolean {
+    return this.loadingService.isLoading();
+  }
 }

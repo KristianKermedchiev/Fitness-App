@@ -3,6 +3,7 @@ import { AuthService } from '../services/auth.service'
 import { User } from '@firebase/auth-types';
 import { UserDataService } from '../services/user-data.service';
 import { Router } from '@angular/router';
+import { LoadingService } from '../services/loading.service';
 
 @Component({
   selector: 'app-my-profile',
@@ -12,7 +13,11 @@ import { Router } from '@angular/router';
 export class MyProfileComponent implements OnInit {
   currentUser: User | null = null;
   userData: any;
-  constructor(private authService: AuthService, private userDataService: UserDataService, private cdr: ChangeDetectorRef, private router: Router) {
+    constructor(private authService: AuthService, 
+      private userDataService: UserDataService, 
+      private cdr: ChangeDetectorRef, 
+      private router: Router,
+      private loadingService: LoadingService) {
     
   }
 
@@ -21,8 +26,11 @@ export class MyProfileComponent implements OnInit {
       this.currentUser = user;
   
       if (this.currentUser) {
+        this.loadingService.show(); 
         this.userDataService.getUserData(this.currentUser.uid).subscribe((data) => {
           this.userData = data;
+          this.loadingService.hide(); 
+          this.cdr.detectChanges(); 
         });
       }
     });
@@ -30,5 +38,9 @@ export class MyProfileComponent implements OnInit {
 
   redirectToUpdateProfile() {
     this.router.navigate(['profile/updateProfile']);
+  }
+
+  isLoading(): boolean {
+    return this.loadingService.isLoading();
   }
 }
