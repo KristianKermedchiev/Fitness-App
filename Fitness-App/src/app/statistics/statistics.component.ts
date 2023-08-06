@@ -57,7 +57,6 @@ export class StatisticsComponent {
     const user = await this.afAuth.currentUser;
 
     if (!user) {
-      // User is not logged in or UID is unavailable
       return;
     }
 
@@ -69,6 +68,12 @@ export class StatisticsComponent {
       this.isSuccess = false;
       this.isError = true;
       this.nutritionMessage = 'Invalid data!'
+
+      setTimeout(() => {
+        this.isError = false;
+        this.nutritionMessage = '';
+      }, 5000);
+
       return;
     }
 
@@ -107,6 +112,11 @@ export class StatisticsComponent {
         this.isSuccess = true;
         this.isError = false;
         this.nutritionMessage = 'Update Successful!'
+
+        setTimeout(() => {
+          this.isSuccess = false;
+          this.nutritionMessage = '';
+        }, 5000);
       })
       .catch((error) => {
         this.isSuccess = false;
@@ -119,7 +129,6 @@ export class StatisticsComponent {
     const user = await this.afAuth.currentUser;
 
     if (!user) {
-      // User is not logged in or UID is unavailable
       return;
     }
 
@@ -128,9 +137,14 @@ export class StatisticsComponent {
     const isWeightvalid = weightValidator(this.currentWeight, this.lastWeekWeight, this.weightGoal);
 
     if (!isWeightvalid) {
-      this.isSuccess = false;
       this.isError = true;
       this.weightMessage = 'Invalid data!'
+
+      setTimeout(() => {
+        this.isError = false;
+        this.weightMessage = '';
+      }, 5000);
+
       return;
     }
 
@@ -159,6 +173,11 @@ export class StatisticsComponent {
         this.isSuccess = true;
         this.isError = false;
         this.weightMessage = 'Update Successful!'
+
+        setTimeout(() => {
+          this.isSuccess = false;
+          this.weightMessage = '';
+        }, 5000);
       })
       .catch((error) => {
         this.isSuccess = false;
@@ -171,7 +190,6 @@ export class StatisticsComponent {
     const user = await this.afAuth.currentUser;
   
     if (!user) {
-      // User is not logged in or UID is unavailable
       return;
     }
   
@@ -180,9 +198,13 @@ export class StatisticsComponent {
     const isRoutineValid = routineValidator(this.sleep, this.workoutRoutine, this.steps);
 
     if (!isRoutineValid) {
-      this.isSuccess = false;
       this.isError = true;
       this.routineMessage = 'Invalid data!'
+
+      setTimeout(() => {
+        this.routineMessage = '';
+      }, 5000);
+
       return;
     }
     
@@ -211,6 +233,11 @@ export class StatisticsComponent {
         this.isSuccess = true;
         this.isError = false;
         this.routineMessage = 'Update Successful!'
+
+        setTimeout(() => {
+          this.isSuccess = false;
+          this.routineMessage = '';
+        }, 5000);
       })
       .catch((error) => {
         this.isSuccess = false;
@@ -219,5 +246,3 @@ export class StatisticsComponent {
       });
   }  
 }
-
-

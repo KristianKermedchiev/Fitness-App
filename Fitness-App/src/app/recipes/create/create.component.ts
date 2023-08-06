@@ -40,16 +40,13 @@ export class CreateComponent {
         this.recipeService.addRecipe(recipe)
           .then((docRef) => {
             console.log('Recipe document written with ID:', docRef.id);
-            // Optionally, display a success message to the user or navigate to a success page
             this.router.navigate(['recipes']);
           })
           .catch((error) => {
             console.error('Error adding recipe document:', error);
-            // Display an error message to the user
           });
       } else {
         console.error('User is not authenticated');
-        // Handle the case when the user is not authenticated
       }
     });
   }

@@ -13,7 +13,7 @@ export class CalorieCalculatorComponent {
   bmr: number | null = null;
   calorieForm: FormGroup;
   isError: boolean = false;
-  nutritionMessage: string = '';
+  calorieCalculatorMessage: string = '';
 
 
   constructor(private formBuilder: FormBuilder) {
@@ -38,11 +38,11 @@ export class CalorieCalculatorComponent {
 
     if (!isNutritionValid) {
       this.isError = true;
-      this.nutritionMessage = 'Invalid data!'
+      this.calorieCalculatorMessage = 'Invalid data!'
 
       setTimeout(() => {
         this.isError = false;
-        this.nutritionMessage = '';
+        this.calorieCalculatorMessage = '';
       }, 5000);
       
       return;
