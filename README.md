@@ -64,3 +64,6 @@ V. Known issues and bugs.
 
 The app is not utilized for very small screns, mainly phones. This is mainly due to the lack of CSS in the side-nav. Error handling, although there is error handling and validation, correct and consistent reasons for the errors is hard to display to the users due to Firebase showing multiple errors at once, therefore many errors will simply say 'Invalid Data' or 'Something went wrong1'.
 
+VI. Future.
+
+In the future I would really like to integrate an app for the smart accessories (phones, tablets, watches, etc.) that may count the steps as well as push notifications to the user to drink water, move around etc. This in turns can help the user stay on track with their set goals.
